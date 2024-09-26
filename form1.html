@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instrumentalist Registration</title>
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./Media styling/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        header {
+            position: fixed;
+            width: 100%;
+            /* height: 10vh; */
+            top: 0;
+            z-index: 500;
+            background: rgba(0, 0, 0, 0.9);
+            color: #fff;
+            /* padding: 15px 0; */
+        }
+                    .menu-icon {
+                font-size: 24px;
+                cursor: pointer;
+            }
+            .tech {
+                background-color: rgba(0, 0, 0, 0.9); /* Slightly more opaque to avoid the black screen */
+                color: white; /* Text color for contrast */
+                transition: transform 0.3s ease-in-out; /* Smooth transition */
+            }
+            .offcanvas {
+                visibility: hidden;
+                transform: translateX(100%);
+                    z-index: 1050; /* Ensures the offcanvas is on top of everything else */
+                    background-color: rgba(0, 0, 0, 0.9); /* Slightly transparent black */
+                
+            }
+            .offcanvas.show {
+                visibility: visible;
+                /* transform: translateX(0); */
+                transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+                
+            }
+            .offcanvas-end {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+
+            .offcanvas.show.offcanvas-end {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            /* padding: 0 20px;
+             */
+             padding: 15px 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            height: 20vh;
+            color: #fff;
+        }
+
+        .logo {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #fff;
+        }
+        .blockie {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.dropdown-content {
+    /* display: none; */
+    /* position: absolute; */
+    top: 50px;
+    right: 40px;
+    /* background-color: rgba(0, 0, 0, 0.455) !important; */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    color: blue;
+    /* z-index: 1000; */
+}
+
+.dropdown-content a {
+    color: rgb(251, 249, 249) !important;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: rgba(0, 0, 255, 0.623);
+}
+
+        .menu-icon {
+            /* font-size: 28px; */
+            cursor: pointer;
+        }
+        .turn{
+            background: url('./images/imageswork/pexels-yankrukov-9010065\ \(1\).jpg') no-repeat center center fixed;
+            background-size: cover;
+            height: 180vh;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            padding: 20px;
+            flex-wrap: wrap;
+            padding-right: 10px;
+            margin-top: 90px;
+        }
+
+        .form-container, .text-container {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin: 10px;
+       
+            flex: 1;
+            /* max-width: 500px; */
+            box-sizing: border-box;
+        }
+       
+
+        .text-container {
+            position: relative;
+            overflow: hidden;
+            height: 300px; /* Adjust as needed */
+        }
+
+        .text-carousel {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            transition: transform 1s ease-in-out;
+        }
+
+        .carousel-item {
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .description {
+            text-align: center;
+            color: #333;
+            font-size: 1.1em;
+            margin-bottom: 20px;
+        }
+
+        form {
+            width: 100%;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+            color: #333;
+        }
+
+        input, textarea, button {
+            width: 98%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+    /* max-width: ; */
+    min-height: 8.3vh;
+    border-radius: 25px;
+    margin: 30px 0;
+    background: transparent;
+    /* border: 1px solid white; */
+    border: none;
+    color: blue;
+    font-weight: 600;
+    /* box-shadow:  0px 1px 7px white; */
+    
+   
+    outline: none;
+    /* box-shadow:  0px 4px 12px black; */
+    box-shadow:  0px 10px 16px rgba(0, 0, 0, 0.367);
+    padding: 0 90px;
+
+    /* paste */
+
+    display: inline-block;
+    
+    cursor: pointer;
+    
+    text-decoration: none;
+    
+    /* border: 3px solid var(--color); */
+    position: relative;
+    
+    isolation: isolate; 
+    --color: hsla(0, 3%, 13%, 0.278);
+    /* background: transparent; */
+    
+    
+    
+    
+}
+
+
+
+/* 
+button:hover{
+    /* min-width: 60%; */
+    /* min-height: 7.7vh;
+    border-radius: 25px;
+    margin: 30px 0;
+    background: transparent;
+    border: 1px solid white;
+    color: white;
+    font-weight: 600;
+   
+    box-shadow:  0px 5px 10px rgb(236, 240, 246);
+    padding: 0 90px; */
+/*     
+}  */
+
+
+
+
+button::after {
+
+    content: '';
+    
+    position: absolute;
+    
+    z-index: -1;
+    
+    background: var(--color);
+    
+    inset: 0;
+    
+    scale: 0 1;
+    
+    transform-origin: right;
+    
+    transition: scale 450ms;
+    border-radius: 25px;
+    
+    }
+
+
+    
+button:hover::after, 
+button:focus-visible::after {
+
+    transform-origin: left;
+
+    scale: 1 1;
+    border-radius: 25px;
+
+    }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .form-container, .text-container {
+                max-width: 100%;
+                margin: 10px 0;
+            }
+            .text-container{
+                display: none;
+            }
+            .form-container{
+                margin-top: 100px;
+                position: sticky;
+                height: 100vh;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo"> 
+                 <a href="MICindex.html">
+                <img src="./images/WhatsApp Image 2024-08-08 at 01.28.04_0b0785cb.jpg" alt="logo" style="max-height: 50px;">
+            </a> 
+        </div>
+            <div class="menu-icon" >
+                <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                    <i class="fa fa-align-justify"></i> 
+                    </button>
+        
+                    
+                    <!-- Offcanvas Menu -->
+                    <div class="offcanvas offcanvas-end tech" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+                        <div class="offcanvas-header blockie">
+                            <h5 id="offcanvasRightLabel"></h5>
+                            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                        </div>
+                        <div class="offcanvas-body">
+                            <div id="dropdown-menu" class="dropdown-content">
+                                <a href="MICindex.html">Home Page</a>
+                                <a href="instrumentalist-registration.html">Instrumentalist Registration</a>
+                                <a href="church-registration.html">Church Registration</a>
+                                <a href="#profiles-directory">Profiles Directory</a>
+                                <a href="#dashboard">Dashboard</a>
+                                <a href="#video-gallery">Video Gallery</a>
+                                <a href="#contact-booking">Contact/Booking</a>
+                                <a href="#testimonials-reviews">Testimonials/Reviews</a>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        
+    
+    </header>
+    <div class="turn">
+    
+        <div class="container">
+            <div class="text-container">
+                <div class="text-carousel" id="carousel">
+                    <div class="carousel-item">Welcome to M.I.C.C! This platform connects skilled instrumentalists with churches in need of musical talents.</div>
+                    <div class="carousel-item">Register now to showcase your skills and contribute to harmonious worship experiences.</div>
+                    <div class="carousel-item">Find opportunities to perform and collaborate with churches and individuals looking for musical excellence.</div>
+                </div>
+                <div class="text-carousel" id="carousel">
+                    <div class="carousel-item">Welcome to M.I.C.C! This platform connects skilled instrumentalists with churches in need of musical talents.</div>
+                    <div class="carousel-item">Register now to showcase your skills and contribute to harmonious worship experiences.</div>
+                    <div class="carousel-item">Find opportunities to perform and collaborate with churches and individuals looking for musical excellence.</div>
+                </div>
+            </div>
+            <div class="form-container">
+                <h2>Instrumentalist Registration</h2>
+                <form id="registrationForm">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+
+                    <label for="instrument">Instrument:</label>
+                    <input type="text" id="instrument" name="instrument" required>
+
+                    <label for="years">Years of Experience:</label>
+                    <input type="number" id="years" name="years" required>
+
+                    <label for="location">Location:</label>
+                    <input type="text" id="location" name="location" required>
+
+                    <label for="rating">Rating (1-5):</label>
+                    <input type="number" id="rating" name="rating" min="1" max="5" required placeholder="">
+
+                    <label for="bio">Bio:</label>
+                    <textarea id="bio" name="bio"></textarea>
+
+                    <button type="submit">Register</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="./bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.getElementById('registrationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            let formData = {
+                name: document.getElementById('name').value,
+                instrument: document.getElementById('instrument').value,
+                years: document.getElementById('years').value,
+                location: document.getElementById('location').value,
+                rating: document.getElementById('rating').value,
+                bio: document.getElementById('bio').value
+            };
+
+            // Store the form data in local storage
+            localStorage.setItem('instrumentalistData', JSON.stringify(formData));
+
+            // Redirect to the profile page
+            window.location.href = 'profile2.html';
+        });
+
+        // Carousel functionality
+        const carousel = document.getElementById('carousel');
+        const items = carousel.querySelectorAll('.carousel-item');
+        let index = 0;
+
+        function showNextItem() {
+            index = (index + 1) % items.length;
+            carousel.style.transform = `translateY(-${index * 100}%)`;
+        }
+
+        setInterval(showNextItem, 3000); // Change text every 3 seconds
+    </script>
+</body>
+</html>

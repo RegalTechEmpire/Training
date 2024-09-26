@@ -1,0 +1,2531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./Media styling/font-awesome.min.css">
+    <!-- <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"> -->
+    <link rel="stylesheet" href="./Media styling/MICindex.css">
+   
+   
+   
+</head>
+<style>
+    .mediaquerry{
+        display: none;
+    }
+    .desktopview{
+        display: block;
+    }
+    .body1{
+        display: none;
+    }
+
+
+        @media screen and (max-width: 1024px){
+            .desktopview{
+                display: none;
+            }
+            .mediaquerry{
+                display: block;
+            }
+                /* Global Styles */
+    .body1 {
+        background-color: #f0f0f0;
+        color: #333;
+        font-size: 16px;
+        height: 360vh;
+    }
+
+    /* Header Styles */
+    .header1 {
+        background-color: #0000008d;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+        border-bottom: 1px solid #ddd;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        color: whitesmoke;
+    }
+    
+
+    .logo img {
+        /* width: 120px; */
+        object-fit: cover;
+        width: 70px;
+    }
+    .menu-icon {
+            font-size: 24px;
+            cursor: pointer;
+        }
+        .tech {
+            background-color: rgba(0, 0, 0, 0.9); /* Slightly more opaque to avoid the black screen */
+            color: white; /* Text color for contrast */
+            transition: transform 0.3s ease-in-out; /* Smooth transition */
+        }
+        .offcanvas {
+            visibility: hidden;
+            transform: translateX(100%);
+                z-index: 1050; /* Ensures the offcanvas is on top of everything else */
+                background-color: rgba(0, 0, 0, 0.9); /* Slightly transparent black */
+            
+        }
+        .offcanvas.show {
+            visibility: visible;
+            /* transform: translateX(0); */
+            transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+            
+        }
+        .offcanvas-end {
+            transform: translateX(100%);
+            opacity: 0;
+        }
+
+        .offcanvas.show.offcanvas-end {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        /* padding: 0 20px;
+         */
+         padding: 15px 20px;
+        background-color: rgba(0, 0, 0, 0.7);
+        height: 20vh;
+        color: #fff;
+    }
+
+    .logo {
+        font-size: 1.8em;
+        font-weight: bold;
+        color: #fff;
+    }
+    .blockie {
+background-color: rgba(0, 0, 0, 0.7);
+}
+
+.dropdown-content {
+/* display: none; */
+/* position: absolute; */
+top: 50px;
+right: 40px;
+/* background-color: rgba(0, 0, 0, 0.455) !important; */
+box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+color: blue;
+/* z-index: 1000; */
+}
+
+.dropdown-content a {
+color: rgb(251, 249, 249) !important;
+padding: 12px 16px;
+text-decoration: none;
+display: block;
+}
+
+.dropdown-content a:hover {
+background-color: rgba(0, 0, 255, 0.623);
+}
+
+    .join a {
+        font-size: 18px;
+        color: #333;
+        text-decoration: none;
+    }
+
+    /* Hero Section Styles */
+    .hero {
+        /* background-image: url(./images/imageswork/240_F_702414088_YTmkiSUn63oaBRVJDapPX0rZBDmhfNCM.jpg); */
+        color: white;
+        text-align: center;
+        padding: 60px 20px;
+        background-image: url(./images/imageswork/240_F_614901400_cAPCKWLiNVCJcGu05WIclKBwEz33icRf.jpg);
+        /* background: linear-gradient(#007bff, whitesmoke); */
+    }
+
+    .hero h1 {
+        font-size: 36px;
+        margin-bottom: 20px;
+    }
+
+    .hero .highlight {
+        color: #19e0b1;
+    }
+
+
+    .search-bar {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    .search-bar input {
+        padding: 10px;
+        border-radius: 5px 0 0 5px;
+        border: none;
+        outline: none;
+        width: 300px;
+        font-size: 16px;
+    }
+
+    .search-bar button {
+        padding: 10px 15px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 0 5px 5px 0;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+    .search-bar button i {
+        font-size: 16px;
+    }
+
+    /* Categories Section Styles */
+    .categories {
+        display: flex;
+        /* flex-direction: row; */
+        justify-content: center ;
+        margin: 20px 0;
+        gap: 20px;
+    }
+
+    .category {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        background-color: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        width: 150px;
+    }
+    .category img{
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+    .category i {
+        font-size: 36px;
+        color: #007bff;
+        margin-bottom: 10px;
+    }
+
+    .category p {
+        font-size: 14px;
+        color: #333;
+    }
+    .build {
+/* margin: 10px 0; */
+padding: 5px ;
+background: linear-gradient(to right, #007bff, rgb(205, 201, 201));
+color: white;
+text-decoration: none;
+border-radius: 8px;
+/* text-align: center; */
+/* transition: background-color 0.3s, transform 0.3s; */
+/* font-size: 18px; */
+font-weight: bold;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+border: none;
+}
+
+.build:hover {
+background-color: #0056b3;
+transform: scale(1.05);
+}
+
+.notecell-container {
+        text-align: center;
+        width: 100%;
+        max-width: 1000px;
+        /* height: 100vh; */
+    }
+
+    h2 {
+        color: #0066ff;
+    }
+
+    .notecell {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+        background-color: #0066ff;
+        padding: 20px 0;
+        border-radius: 10px;
+    }
+
+    .notecell-inner {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+    }
+
+    .notecell-item {
+        min-width: 250px;
+        margin: 0 10px;
+        background-color: #fff;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .notecell-item img {
+        border-radius: 50%;
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+    }
+
+    h3 {
+        margin: 10px 0 5px;
+        color: #333;
+    }
+
+    p {
+        color: #777;
+    }
+
+    .button88 {
+        margin-top: 10px;
+        padding: 10px 15px;
+        background-color: #3399ff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .button88:hover {
+        background-color: #1a73e8;
+    }
+
+    .note-btn, .note2-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: #0066ff;
+        border: none;
+        color: white;
+        font-size: 24px;
+        cursor: pointer;
+        padding: 10px;
+        border-radius: 50%;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        z-index: 10;
+    }
+
+    .note-btn {
+        left: 10px;
+    }
+
+    .note2-btn {
+        right: 10px;
+    }
+    
+ 
+        .notecell-item {
+            /* min-width: 90%; */
+            margin: 0 auto;
+            padding: 20px 10px;
+            margin-left: 10px;
+        }
+
+        .note-btn, .note2-btn {
+            display: block;
+        }
+    
+    /* churchenote */
+    .notecell1-container {
+        text-align: center;
+        width: 100%;
+        max-width: 1000px;
+        /* height: 50vh; */
+    }
+
+    h2 {
+        color: #0066ff;
+    }
+
+    .notecell1 {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+        background: linear-gradient( to right, #007bff, whitesmoke);
+        padding: 20px 0;
+        border-radius: 10px;
+    }
+
+    .notecell1-inner {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+    }
+
+    .notecell1-item {
+        min-width: 250px;
+        margin: 0 10px;
+        background-color: #fff;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .notecell1-item img {
+        border-radius: 50%;
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+    }
+
+    h3 {
+        margin: 10px 0 5px;
+        color: #333;
+    }
+
+    p {
+        color: #777;
+    }
+
+    .button88 {
+        margin-top: 10px;
+        padding: 10px 15px;
+        background-color: #3399ff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .button88:hover {
+        background-color: #1a73e8;
+    }
+
+    .note-btn, .note2-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: #0066ff;
+        border: none;
+        color: white;
+        font-size: 24px;
+        cursor: pointer;
+        padding: 10px;
+        border-radius: 50%;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        z-index: 10;
+    }
+
+    .note-btn {
+        left: 10px;
+    }
+
+    .note2-btn {
+        right: 10px;
+    }
+    
+    .content {
+        display: flex;
+        align-items: center;
+        gap: 50px;
+        max-width: 100%;
+        justify-content: center;
+        margin-top: 30px;
+    }
+
+    .text-container {
+        max-width: 500px;
+    }
+
+    .text-container h1 {
+        font-size: 3em;
+        margin: 0;
+        color: #1a73e8;
+        animation: colorChange 5s infinite;
+    }
+
+    .text-container p {
+        font-size: 1.2em;
+        line-height: 1.5;
+        color: #555;
+    }
+
+    @keyframes colorChange {
+        0% { color: #1a73e8; }
+        50% { color: #00bfff; }
+        100% { color: #004a8f; }
+    }
+
+    .container {
+        position: relative;
+        width: 400px;
+        height: 400px;
+    }
+
+    .main-svg {
+        width: 100%;
+        height: auto;
+        position: relative;
+        z-index: 1;
+    }
+
+    .circle {
+        position: absolute;
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        animation: rotate 6s linear infinite;
+    }
+
+    .circle1 {
+        background-color: #FF6B6B;
+        top: 50%;
+        left: 100%;
+        transform-origin: -200px 0;
+    }
+
+    .circle2 {
+        background-color: #FFD93D;
+        top: 0%;
+        left: 50%;
+        transform-origin: 0 200px;
+    }
+
+    .circle3 {
+        background-color: #6BCB77;
+        top: 50%;
+        left: 0%;
+        transform-origin: 200px 0;
+    }
+
+    .circle4 {
+        background-color: #4D96FF;
+        bottom: 0%;
+        left: 50%;
+        transform-origin: 0 -200px;
+    }
+
+    @keyframes rotate {
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+           /* Styles for the Contact Us Section */
+           .contact1section {
+        text-align: center;
+        background: linear-gradient(90deg, blue, skyblue);
+        color: white;
+        padding: 50px 0;
+    }
+
+    .contact1section h2 {
+        font-size: 2.5em;
+        margin-bottom: 10px;
+    }
+
+    .contact1section p {
+        font-size: 1.2em;
+        margin-bottom: 20px;
+    }
+
+    .contact1btn {
+        padding: 15px 30px;
+        background-color: #fff;
+        color: blue;
+        text-transform: uppercase;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+    }
+
+    .contact1btn:hover {
+        background-color: skyblue;
+        color: #fff;
+    }
+
+    /* Styles for the Valued Clients Section */
+    .clients-section {
+        padding: 30px 0;
+        text-align: center;
+        background-color: white;
+    }
+
+    .clients-section h3 {
+        font-size: 2em;
+        margin-bottom: 20px;
+    }
+
+    .client-logos {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .client-logos img {
+        max-width: 150px;
+        max-height: 100px;
+        object-fit: contain;
+        filter: grayscale(100%);
+        transition: filter 0.3s ease;
+    }
+
+    .client-logos img:hover {
+        filter: none;
+    }
+
+    /* Styles for the Contact Page */
+    .contact1page {
+        padding: 50px;
+        background: #f0f0f0;
+        color: #333;
+    }
+
+    .faq-section {
+        margin-bottom: 50px;
+    }
+
+    .faq h4 {
+        font-size: 1.5em;
+        margin-bottom: 10px;
+    }
+
+    .faq p {
+        font-size: 1em;
+        margin-bottom: 20px;
+    }
+
+    .ask-question-section h3 {
+        font-size: 2em;
+        margin-bottom: 20px;
+    }
+
+    #ask-question-form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #ask-question-form textarea {
+        padding: 15px;
+        font-size: 1em;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        margin-bottom: 20px;
+    }
+
+    #ask-question-form button {
+        padding: 15px;
+        font-size: 1em;
+        background-color: blue;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    #ask-question-form button:hover {
+        background-color: skyblue;
+    }
+
+    /* Add animation background */
+    .shiftthis {
+        animation: backgroundAnimation 10s infinite alternate;
+    }
+
+    @keyframes backgroundAnimation {
+        from {
+            background: blue;
+        }
+        to {
+            background: skyblue;
+        }
+    }
+
+    /* Media Query for Tablets */
+
+        .content {
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .container {
+            width: 300px;
+            height: 300px;
+        }
+
+        .text-container h1 {
+            font-size: 2.5em;
+        }
+
+        .text-container p {
+            font-size: 1.1em;
+        }
+              /* Global Styles */
+  
+
+
+
+    /* Header Styles */
+
+    
+
+  
+
+    .logo img {
+        /* width: 120px; */
+        object-fit: cover;
+        width: 70px;
+    }
+  
+        .tech {
+            /* background-color: rgba(0, 0, 0, 0.9); Slightly more opaque to avoid the black screen */
+            color: white; /* Text color for contrast */
+            transition: transform 0.3s ease-in-out; /* Smooth transition */
+        }
+        .offcanvas {
+            visibility: hidden;
+            transform: translateX(100%);
+                z-index: 1050; /* Ensures the offcanvas is on top of everything else */
+                /* background-color: rgba(0, 0, 0, 0.9); Slightly transparent black */
+            
+        }
+        .offcanvas.show {
+            visibility: visible;
+            /* transform: translateX(0); */
+            transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+            
+        }
+        .offcanvas-end {
+            transform: translateX(100%);
+            opacity: 0;
+        }
+
+        .offcanvas.show.offcanvas-end {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        /* padding: 0 20px;
+         */
+         padding: 15px 20px;
+        background-color: rgba(0, 0, 0, 0.7);
+        height: 20vh;
+        color: #fff;
+    }
+
+    .logo {
+        font-size: 1.8em;
+        font-weight: bold;
+        color: #fff;
+    }
+    .blockie {
+background-color: rgba(0, 0, 0, 0.7);
+}
+
+.dropdown-content {
+/* display: none; */
+/* position: absolute; */
+top: 50px;
+right: 40px;
+/* background-color: rgba(0, 0, 0, 0.455) !important; */
+box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+color: blue;
+/* z-index: 1000; */
+}
+
+.dropdown-content a {
+color: rgb(251, 249, 249) !important;
+padding: 12px 16px;
+text-decoration: none;
+display: block;
+}
+
+.dropdown-content a:hover {
+background-color: rgba(0, 0, 255, 0.623);
+}
+
+    .join a {
+        font-size: 18px;
+        color: #333;
+        text-decoration: none;
+    }
+
+    /* Hero Section Styles */
+    .hero {
+        /* background-image: url(./images/imageswork/240_F_702414088_YTmkiSUn63oaBRVJDapPX0rZBDmhfNCM.jpg); */
+        color: white;
+        text-align: center;
+        padding: 60px 20px;
+        background-image: url(./images/imageswork/240_F_614901400_cAPCKWLiNVCJcGu05WIclKBwEz33icRf.jpg);
+        /* background: linear-gradient(#007bff, whitesmoke); */
+    }
+
+    .hero h1 {
+        font-size: 36px;
+        margin-bottom: 20px;
+    }
+
+    .hero .highlight {
+        color: #19e0b1;
+    }
+
+
+    .search-bar {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    .search-bar input {
+        padding: 10px;
+        border-radius: 5px 0 0 5px;
+        border: none;
+        outline: none;
+        width: 300px;
+        font-size: 16px;
+    }
+
+    .search-bar button {
+        padding: 10px 15px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 0 5px 5px 0;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+    .search-bar button i {
+        font-size: 16px;
+    }
+
+    /* Categories Section Styles */
+    .categories {
+        display: flex;
+        /* flex-direction: row; */
+        justify-content: center ;
+        margin: 20px 0;
+        gap: 20px;
+    }
+
+    .category {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        background-color: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        width: 150px;
+    }
+    .category img{
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+    .category i {
+        font-size: 36px;
+        color: #007bff;
+        margin-bottom: 10px;
+    }
+
+    .category p {
+        font-size: 14px;
+        color: #333;
+    }
+    .build {
+/* margin: 10px 0; */
+padding: 5px ;
+background: linear-gradient(to right, #007bff, rgb(205, 201, 201));
+color: white;
+text-decoration: none;
+border-radius: 8px;
+/* text-align: center; */
+/* transition: background-color 0.3s, transform 0.3s; */
+/* font-size: 18px; */
+font-weight: bold;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+border: none;
+}
+
+.build:hover {
+background-color: #0056b3;
+transform: scale(1.05);
+}
+
+.notecell-container {
+        text-align: center;
+        width: 100%;
+        max-width: 1000px;
+        /* height: 100vh; */
+    }
+
+    h2 {
+        color: #0066ff;
+    }
+
+    .notecell {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+        background-color: #0066ff;
+        padding: 20px 0;
+        border-radius: 10px;
+    }
+
+    .notecell-inner {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+    }
+
+    .notecell-item {
+        min-width: 250px;
+        margin: 0 10px;
+        background-color: #fff;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .notecell-item img {
+        border-radius: 50%;
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+    }
+
+    h3 {
+        margin: 10px 0 5px;
+        color: #333;
+    }
+
+    p {
+        color: #777;
+    }
+
+    .button88 {
+        margin-top: 10px;
+        padding: 10px 15px;
+        background-color: #3399ff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .button88:hover {
+        background-color: #1a73e8;
+    }
+
+    .note-btn, .note2-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: #0066ff;
+        border: none;
+        color: white;
+        font-size: 24px;
+        cursor: pointer;
+        padding: 10px;
+        border-radius: 50%;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        z-index: 10;
+    }
+
+    .note-btn {
+        left: 10px;
+    }
+
+    .note2-btn {
+        right: 10px;
+    }
+
+        .notecell-item {
+            /* min-width: 90%; */
+            margin: 0 auto;
+            padding: 20px 10px;
+            margin-left: 10px;
+        }
+
+        .note-btn, .note2-btn {
+            display: block;
+        }
+    
+    /* churchenote */
+    .notecell1-container {
+        text-align: center;
+        width: 100%;
+        max-width: 1000px;
+        /* height: 50vh; */
+    }
+
+    h2 {
+        color: #0066ff;
+    }
+
+    .notecell1 {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+        background: linear-gradient( to right, #007bff, whitesmoke);
+        padding: 20px 0;
+        border-radius: 10px;
+    }
+
+    .notecell1-inner {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+    }
+
+    .notecell1-item {
+        min-width: 250px;
+        margin: 0 10px;
+        background-color: #fff;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .notecell1-item img {
+        border-radius: 50%;
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+    }
+
+    h3 {
+        margin: 10px 0 5px;
+        color: #333;
+    }
+
+    p {
+        color: #777;
+    }
+
+    .button88 {
+        margin-top: 10px;
+        padding: 10px 15px;
+        background-color: #3399ff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .button88:hover {
+        background-color: #1a73e8;
+    }
+
+    .note-btn, .note2-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: #0066ff;
+        border: none;
+        color: white;
+        font-size: 24px;
+        cursor: pointer;
+        padding: 10px;
+        border-radius: 50%;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        z-index: 10;
+    }
+
+    .note-btn {
+        left: 10px;
+    }
+
+    .note2-btn {
+        right: 10px;
+    }
+    
+    .content {
+        display: flex;
+        align-items: center;
+        gap: 50px;
+        max-width: 100%;
+        justify-content: center;
+        margin-top: 30px;
+    }
+
+    .text-container {
+        max-width: 500px;
+    }
+
+    .text-container h1 {
+        font-size: 3em;
+        margin: 0;
+        color: #1a73e8;
+        animation: colorChange 5s infinite;
+    }
+
+    .text-container p {
+        font-size: 1.2em;
+        line-height: 1.5;
+        color: #555;
+    }
+
+    @keyframes colorChange {
+        0% { color: #1a73e8; }
+        50% { color: #00bfff; }
+        100% { color: #004a8f; }
+    }
+
+    .container {
+        position: relative;
+        width: 400px;
+        height: 400px;
+    }
+
+    .main-svg {
+        width: 100%;
+        height: auto;
+        position: relative;
+        z-index: 1;
+    }
+
+    .circle {
+        position: absolute;
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        animation: rotate 6s linear infinite;
+    }
+
+    .circle1 {
+        background-color: #FF6B6B;
+        top: 50%;
+        left: 100%;
+        transform-origin: -200px 0;
+    }
+
+    .circle2 {
+        background-color: #FFD93D;
+        top: 0%;
+        left: 50%;
+        transform-origin: 0 200px;
+    }
+
+    .circle3 {
+        background-color: #6BCB77;
+        top: 50%;
+        left: 0%;
+        transform-origin: 200px 0;
+    }
+
+    .circle4 {
+        background-color: #4D96FF;
+        bottom: 0%;
+        left: 50%;
+        transform-origin: 0 -200px;
+    }
+
+    @keyframes rotate {
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+           /* Styles for the Contact Us Section */
+           .contact1section {
+        text-align: center;
+        background: linear-gradient(90deg, blue, skyblue);
+        color: white;
+        padding: 50px 0;
+    }
+
+    .contact1section h2 {
+        font-size: 2.5em;
+        margin-bottom: 10px;
+    }
+
+    .contact1section p {
+        font-size: 1.2em;
+        margin-bottom: 20px;
+    }
+
+    .contact1btn {
+        padding: 15px 30px;
+        background-color: #fff;
+        color: blue;
+        text-transform: uppercase;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+    }
+
+    .contact1btn:hover {
+        background-color: skyblue;
+        color: #fff;
+    }
+
+    /* Styles for the Valued Clients Section */
+    .clients-section {
+        padding: 30px 0;
+        text-align: center;
+        background-color: white;
+    }
+
+    .clients-section h3 {
+        font-size: 2em;
+        margin-bottom: 20px;
+    }
+
+    .client-logos {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .client-logos img {
+        max-width: 150px;
+        max-height: 100px;
+        object-fit: contain;
+        filter: grayscale(100%);
+        transition: filter 0.3s ease;
+    }
+
+    .client-logos img:hover {
+        filter: none;
+    }
+
+    /* Styles for the Contact Page */
+    .contact1page {
+        padding: 50px;
+        background: #f0f0f0;
+        color: #333;
+    }
+
+    .faq-section {
+        margin-bottom: 50px;
+    }
+
+    .faq h4 {
+        font-size: 1.5em;
+        margin-bottom: 10px;
+    }
+
+    .faq p {
+        font-size: 1em;
+        margin-bottom: 20px;
+    }
+
+    .ask-question-section h3 {
+        font-size: 2em;
+        margin-bottom: 20px;
+    }
+
+    #ask-question-form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #ask-question-form textarea {
+        padding: 15px;
+        font-size: 1em;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        margin-bottom: 20px;
+    }
+
+    #ask-question-form button {
+        padding: 15px;
+        font-size: 1em;
+        background-color: blue;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    #ask-question-form button:hover {
+        background-color: skyblue;
+    }
+
+    /* Add animation background */
+    .shiftthis {
+        animation: backgroundAnimation 10s infinite alternate;
+    }
+
+    @keyframes backgroundAnimation {
+        from {
+            background: blue;
+        }
+        to {
+            background: skyblue;
+        }
+    }
+
+    /* Media Query for Tablets */
+   
+        .content {
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .container {
+            width: 300px;
+            height: 300px;
+        }
+
+        .text-container h1 {
+            font-size: 2.5em;
+        }
+
+        .text-container p {
+            font-size: 1.1em;
+        }
+    
+
+    /* Media Query for Mobile Devices */
+
+        .content {
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .container {
+            width: 250px;
+            height: 250px;
+        }
+
+        .text-container h1 {
+            font-size: 2em;
+        }
+
+        .text-container p {
+            font-size: 1em;
+        }
+    
+    
+    
+        .notecell1-item {
+            /* min-width: 90%; */
+            margin: 0 auto;
+            padding: 20px 10px;
+            margin-left: 10px;
+        }
+
+        .note-btn, .note2-btn {
+            display: block;
+        }
+    
+
+
+    /* Responsive Styles */
+    
+        .hero h1 {
+            font-size: 28px;
+        }
+
+        .search-bar input {
+            width: 200px;
+        }
+
+        .categories {
+            flex-direction: row;
+            gap: 15px;
+        }
+
+        .category {
+            width: 100%;
+        }
+    
+
+
+        .hero h1 {
+            font-size: 24px;
+        }
+
+        .search-bar input {
+            width: 180px;
+        }
+
+        .category i {
+            font-size: 28px;
+        }
+
+        .category p {
+            font-size: 12px;
+        }
+    
+    .thefooter {
+        background-color: #f8f9fa;
+        padding: 20px 0;
+    }
+
+    .thefooter-container {
+        display: flex;
+        justify-content: space-between;
+        padding: 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+        flex-wrap: wrap;
+        align-items: flex-start; /* Adjusted to keep all items at the top */
+    }
+
+    .thefooter-section {
+        flex: 1;
+        margin: 10px;
+        min-width: 250px;
+    }
+
+    .company-info img {
+        max-width: 100px;
+        margin-bottom: 10px;
+    }
+
+    .company-info p {
+        color: #757575;
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    .company-links h3, .mail-us h3, .facebook-widget h3 {
+        font-size: 16px;
+        color: #343a40;
+        margin-bottom: 10px;
+    }
+
+    .company-links ul {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    .company-links ul li {
+        margin-bottom: 5px;
+    }
+
+    .company-links ul li a {
+        color: #007bff;
+        text-decoration: none;
+        font-size: 14px;
+    }
+
+    .mail-us p, .mail-us a {
+        font-size: 14px;
+        color: #007bff;
+        text-decoration: none;
+    }
+
+    .facebook-widget {
+        text-align: center;
+        margin-top: 20px; /* Adjust the margin-top for better spacing */
+    }
+    /* thereviews Section */
+.thereviews-container {
+max-width: 800px;
+margin: 50px auto;
+padding: 20px;
+background-color: #f8f9fa;
+border-radius: 10px;
+box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+text-align: center;
+}
+
+.thereviews-container h2 {
+font-size: 28px;
+margin-bottom: 30px;
+color: #343a40;
+animation: fadeIn 1.5s ease-in-out;
+}
+
+.thereview-card {
+background-color: #ffffff;
+padding: 15px;
+margin: 20px 0;
+border-radius: 10px;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.thereview-card:hover {
+transform: scale(1.05);
+box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.thereview-header {
+display: flex;
+align-items: center;
+justify-content: center;
+margin-bottom: 10px;
+}
+
+.rating span {
+font-size: 24px;
+color: #f4c150;
+margin-right: 5px;
+animation: bounce 1.2s ease-in-out infinite alternate;
+}
+
+.thereview-card h3 {
+font-size: 18px;
+color: #007bff;
+margin-left: 10px;
+}
+
+.thereview-text {
+font-size: 16px;
+color: #6c757d;
+line-height: 1.5;
+animation: fadeInUp 1.5s ease-in-out;
+}
+
+/* Animations */
+@keyframes fadeIn {
+0% {
+    opacity: 0;
+}
+100% {
+    opacity: 1;
+}
+}
+
+@keyframes fadeInUp {
+0% {
+    opacity: 0;
+    transform: translateY(20px);
+}
+100% {
+    opacity: 1;
+    transform: translateY(0);
+}
+}
+
+@keyframes bounce {
+0% {
+    transform: translateY(0);
+}
+100% {
+    transform: translateY(-10px);
+}
+}
+
+    
+
+    /* Media Query for Mobile Devices */
+
+        .content {
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .container {
+            width: 250px;
+            height: 250px;
+        }
+
+        .text-container h1 {
+            font-size: 2em;
+        }
+
+        .text-container p {
+            font-size: 1em;
+        }
+    
+    
+    
+        .notecell1-item {
+            /* min-width: 90%; */
+            margin: 0 auto;
+            padding: 20px 10px;
+            margin-left: 10px;
+        }
+
+        .note-btn, .note2-btn {
+            display: block;
+        }
+    
+
+
+    /* Responsive Styles */
+    
+        .hero h1 {
+            font-size: 28px;
+        }
+
+        .search-bar input {
+            width: 200px;
+        }
+
+        .categories {
+            flex-direction: row;
+            gap: 15px;
+        }
+
+        .category {
+            width: 100%;
+        }
+    
+
+        .hero h1 {
+            font-size: 24px;
+        }
+
+        .search-bar input {
+            width: 180px;
+        }
+
+        .category i {
+            font-size: 28px;
+        }
+
+        .category p {
+            font-size: 12px;
+        }
+    
+    .thefooter {
+        background-color: #f8f9fa;
+        padding: 20px 0;
+    }
+
+    .thefooter-container {
+        display: flex;
+        justify-content: space-between;
+        padding: 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+        flex-wrap: wrap;
+        align-items: flex-start; /* Adjusted to keep all items at the top */
+    }
+
+    .thefooter-section {
+        flex: 1;
+        margin: 10px;
+        min-width: 250px;
+    }
+
+    .company-info img {
+        max-width: 100px;
+        margin-bottom: 10px;
+    }
+
+    .company-info p {
+        color: #757575;
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    .company-links h3, .mail-us h3, .facebook-widget h3 {
+        font-size: 16px;
+        color: #343a40;
+        margin-bottom: 10px;
+    }
+
+    .company-links ul {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    .company-links ul li {
+        margin-bottom: 5px;
+    }
+
+    .company-links ul li a {
+        color: #007bff;
+        text-decoration: none;
+        font-size: 14px;
+    }
+
+    .mail-us p, .mail-us a {
+        font-size: 14px;
+        color: #007bff;
+        text-decoration: none;
+    }
+
+    .facebook-widget {
+        text-align: center;
+        margin-top: 20px; /* Adjust the margin-top for better spacing */
+    }
+    /* thereviews Section */
+.thereviews-container {
+max-width: 800px;
+margin: 50px auto;
+padding: 20px;
+background-color: #f8f9fa;
+border-radius: 10px;
+box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+text-align: center;
+}
+
+.thereviews-container h2 {
+font-size: 28px;
+margin-bottom: 30px;
+color: #343a40;
+animation: fadeIn 1.5s ease-in-out;
+}
+
+.thereview-card {
+background-color: #ffffff;
+padding: 15px;
+margin: 20px 0;
+border-radius: 10px;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.thereview-card:hover {
+transform: scale(1.05);
+box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.thereview-header {
+display: flex;
+align-items: center;
+justify-content: center;
+margin-bottom: 10px;
+}
+
+.rating span {
+font-size: 24px;
+color: #f4c150;
+margin-right: 5px;
+animation: bounce 1.2s ease-in-out infinite alternate;
+}
+
+.thereview-card h3 {
+font-size: 18px;
+color: #007bff;
+margin-left: 10px;
+}
+
+.thereview-text {
+font-size: 16px;
+color: #6c757d;
+line-height: 1.5;
+animation: fadeInUp 1.5s ease-in-out;
+}
+
+/* Animations */
+@keyframes fadeIn {
+0% {
+    opacity: 0;
+}
+100% {
+    opacity: 1;
+}
+}
+
+@keyframes fadeInUp {
+0% {
+    opacity: 0;
+    transform: translateY(20px);
+}
+100% {
+    opacity: 1;
+    transform: translateY(0);
+}
+}
+
+@keyframes bounce {
+0% {
+    transform: translateY(0);
+}
+100% {
+    transform: translateY(-10px);
+}
+}
+
+/* Responsive Design */
+
+.thereviews-container {
+    padding: 15px;
+}
+
+.thereview-card {
+    margin: 15px 0;
+}
+
+.thereview-card h3 {
+    font-size: 16px;
+}
+
+.thereview-text {
+    font-size: 14px;
+}
+
+
+
+    /* Responsive Design */
+
+        .thefooter-container {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .thefooter-section {
+            margin: 10px 0;
+        }
+
+        .facebook-widget {
+            margin-top: 10px;
+            width: 100%; /* Ensure the widget takes up full width */
+        }
+        header{
+            display: none;
+        }
+        .carousel{
+            display: none;
+        }
+        .regal1{
+            display: none;
+        }
+        .add{
+            display: none;
+        }
+        .content{
+            display: none;
+        }
+        .turnthis{
+            display: none;
+        }
+        .reviews-container{
+            display: none;
+        }
+        .footer-container{
+            display: none;
+        }
+            
+        }
+    
+
+</style>
+<body>
+   
+   <div class="destopview">
+    <header>
+        <div class="navbar" id="nav">
+            <div class="logo d-flex align-items-center"> 
+                <a href="MICindex.html">
+                    <img src="./images/WhatsApp Image 2024-08-08 at 01.28.04_0b0785cb.jpg" alt="logo" style="max-height: 50px;">
+                </a> 
+                <span class="search-bar d-flex ms-3">
+                    <input type="text" id="search-input" class="form-control" placeholder="Search by name, instrument, or location">
+                    <button id="search-btn" class="btn btn-primary ">Search</button>
+                </span>
+            </div>
+          
+        
+            <!-- <div class="menu-icon" onclick="toggleDropdown()">☰</div> -->
+            <!-- <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><i class="fa fa-align-justify"></i></button> -->
+            <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" >
+            <i class="fa fa-align-justify"></i> 
+            </button>
+
+            
+            <!-- Offcanvas Menu -->
+            <div class="offcanvas offcanvas-end tech" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+                <div class="offcanvas-header blockie">
+                    <h5 id="offcanvasRightLabel"></h5>
+                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <div id="dropdown-menu" class="dropdown-content">
+                        <a href="MICregistration.html">Instrumentalist Registration</a>
+                        <a href="./church.html">Church Registration</a>
+                        <a href="#ins">Profiles Directory</a>
+                        <!-- <a href="#dashboard">Dashboard</a> -->
+                        <!-- <a href="#video-gallery">Video Gallery</a> -->
+                        <a href="MICcontact.html">Contact/Booking</a>
+                        <a href="#rate">Testimonials/Reviews</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+       
+    </header>
+    <div class="carousel">
+        <div class="carousel-item active" id="item1">
+            <img src="./images/imageswork/pexels-anthonyshkraba-production-8040841.jpg" alt="Image 1">
+            <div class="carousel-content">
+                <div class="carousel-text">
+                    <h1>M.I.C.C</h1>
+                    <h1><span id="typed1"></span></h1>
+            
+                </div>
+                <div class="buttons">
+                    <a href="MICregistration.html" class="btn">Register as Instrumentalist</a>
+                    <a href="church.html" class="btn">Register as Church</a>
+                </div>
+            </div>
+        
+        </div>
+        <div class="carousel-item" id="item2">
+            <img src="./images/imageswork/pexels-yankrukov-9010081.jpg" alt="Image 2">
+            <div class="carousel-content">
+                <div class="carousel-text">
+                    <h1>M.I.C.C </h1>
+                    <h1><span id="typed2"></span></h1>
+                 
+                </div>
+                <div class="buttons">
+                    <a href="./MICregistration.html" class="btn">Register as Instrumentalist</a>
+                    <a href="church.html" class="btn">Register as Church</a>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-item" id="item3">
+            <img src="./images/imageswork/240_F_702414088_YTmkiSUn63oaBRVJDapPX0rZBDmhfNCM.jpg" alt="Image 3">
+            <div class="carousel-content">
+                <div class="carousel-text">
+                    <h1>M.I.C.C</h1>
+                    <h1><span id="typed3"></span></h1>
+                  
+                </div>
+           
+                <div class="buttons">
+                    <a href="./MICregistration.html" class="btn">Register as Instrumentalist</a>
+                    <a href="./church.html" class="btn">Register as Church</a>
+                        
+                </div>
+                
+            
+            </div>
+   
+        
+    </div>
+   </div>
+ 
+    
+   
+
+    <div class="regal1">
+
+    
+        <h1 class="our">
+            <span style="color: #007BFF; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">Our</span>
+            <span style="color: #007BFF; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;"> Available </span>
+            <span style="color: #007BFF; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">Instrumentalist</span>
+        
+        </h1>
+        <div class="carouselll" id="ins" data-keywords="Piano guitar violin drummer saxophonist">
+            <div class="carouselll-container">
+                <div class="carouselll-slide">
+                    <div class="carddd data-keyword" >
+                        <img src="./images/profile images/pexels-rdne-6192181.jpg" alt="Instrumentalist 1" class="carddd-image">
+                        <h3 class="carddd-title">Regal Tech</h3>
+                        <p class="carddd-instrument">Violinist</p>
+                        <a href="profile2.html" class="message-link">Message me</a>
+                    </div>
+                    <div class="carddd">
+                        <img src="./images/profile images/pexels-rdne-7502113.jpg" alt="Instrumentalist 2" class="carddd-image">
+                        <h3 class="carddd-title">Chukwu John</h3>
+                        <p class="carddd-instrument">Saxophonist</p>
+                        <a href="#" class="message-link">Message me</a>
+                    </div>
+                    <div class="carddd">
+                        <img src="./images/profile images/pexels-dirx-ubwino-134457761-10205951.jpg" alt="Instrumentalist 3" class="carddd-image">
+                        <h3 class="carddd-title">Precious Johnson</h3>
+                        <p class="carddd-instrument">Pianist</p>
+                        <a href="#" class="message-link">Message me</a>
+                    </div>
+                    <div class="carddd">
+                        <img src="./images/profile images/pexels-yankrukov-9010097.jpg" alt="Instrumentalist 4" class="carddd-image">
+                        <h3 class="carddd-title">Emily Davis</h3>
+                        <p class="carddd-instrument">Violinist</p>
+                        <a href="#" class="message-link">Message me</a>
+                    </div>
+                    <div class="carddd">
+                        <img src="./images/profile images/pexels-yankrukov-9010097.jpg" alt="Instrumentalist 4" class="carddd-image">
+                        <h3 class="carddd-title">Emike David</h3>
+                        <p class="carddd-instrument">Pianist</p>
+                        <a href="#" class="message-link">Message me</a>
+                    </div>
+                    <div class="carddd">
+                        <img src="./images/profile images/pexels-yankrukov-9010097.jpg" alt="Instrumentalist 4" class="carddd-image">
+                        <h3 class="carddd-title">Chikere John</h3>
+                        <p class="carddd-instrument">Violinist</p>
+                        <a href="#" class="message-link">Message me</a>
+                    </div>
+                </div>
+            </div>
+            <button class="prev">❮</button>
+            <button class="next">❯</button>
+        </div>
+        <div class="countdown-container">
+            <div class="countdown">
+                <div class="count" id="instrumentalists">0</div>
+                <p>Instrumentalists</p>
+            </div>
+            <div class="countdown">
+                <div class="count" id="churches">0</div>
+                <p>Churches</p>
+            </div>
+            <div class="countdown">
+                <div class="count" id="connections">0</div>
+                <p>Connections</p>
+            </div>
+            <div class="countdown">
+                <div class="count" id="works">0</div>
+                <p>Works</p>
+            </div>
+        </div>
+        <h1 class="our">
+            <span style="color: #007BFF; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">Churches</span>
+            <span style="color: #007BFF; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;"> Available </span>
+            <span style="color: #007BFF; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">To Hire</span>
+        
+        </h1>
+        <div class="container">
+            <button id="viewAllBtn">View All Churches</button>
+            <!-- <div id="swiperContainer" class="swiper-container"> -->
+                <div class="carousel-container-x9x9">
+                    <button class="carousel-btn-left-x9x9">&lt;</button>
+                    <div class="carousel-inner-wrapper-x9x9">
+                        <div class="carousel-inner-x9x9">
+                            <div class="carousel-item-x9x9">
+                                <img src="./images/profile images/deeper life.jpg" alt="Deeper Life Church" style="object-fit: cover;">
+                                <h3>Deeper Life Church</h3>
+                                <p>No 22 Garrison Rd Aba</p>
+                                <a href="church_profile.html">                            <button class="need-btn-x9x9">Pianist needed</button></a>
+                            </div>
+                            <div class="carousel-item-x9x9">
+                                <img src="./images/profile images/chriss.jpeg" alt="Christ Embassy" style="object-fit: cover;">
+                                <h3>Christ Embassy</h3>
+                                <p>No 2 Immaculate Rd Aba</p>
+                                <button class="need-btn-x9x9">Guitarist needed</button>
+                            </div>
+                            <div class="carousel-item-x9x9">
+                                <img src="./images/profile images/redeem.png" alt="Redeemed Church OF God" style="object-fit: cover;">
+                                <h3>Redeemed Church OF God</h3>
+                                <p>No 22 Male Street Aba</p>
+                                <button class="need-btn-x9x9">Violinist needed</button>
+                            </div>
+                            <div class="carousel-item-x9x9">
+                                <img src="./images/profile images/rhema.png" alt="Living Faith Church" style="object-fit: cover;">
+                                <h3>Living Faith Church</h3>
+                                <p>No 23 Housing Rd Aba Abia State</p>
+                                <button class="need-btn-x9x9">Saxophonist needed</button>
+                            </div>
+                            <div class="carousel-item-x9x9">
+                                <img src="church-logo-4.png" alt="Living Faith Church">
+                                <h3>Living Faith Church</h3>
+                                <p>No 23 Housing Rd Aba Abia State</p>
+                                <button class="need-btn-x9x9">Saxophonist needed</button>
+                            </div>
+                            <div class="carousel-item-x9x9">
+                                <img src="church-logo-4.png" alt="Living Faith Church">
+                                <h3>Living Faith Church</h3>
+                                <p>No 23 Housing Rd Aba Abia State</p>
+                                <button class="need-btn-x9x9">Saxophonist needed</button>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-btn-right-x9x9">&gt;</button>
+                </div>
+
+                
+                
+                
+            </div>
+            
+                   
+            
+               
+        
+            <div id="gridContainer" class="grid-view">
+                <!-- Example Card 1 -->
+                <div class="card">
+                
+                    <img src="./images/profile images/living faith church.jpg" alt="Church Image">
+                    <div class="card-info">
+                        <h3>Living Faith Church</h3>
+                        <p>Location: No 2 Brass Aba Abia State, Nigeria</p>
+                        <p>Instrumentalist Needed: Drummer</p>
+                    </div>
+                </div>
+                <!-- Example Card 2 -->
+                <div class="card">
+                    <img src="./images/profile images/seve.jpg" alt="Church Image">
+                    <div class="card-info">
+                        <h3>Seventh-Day Adventist</h3>
+                        <p>Location: No 8 Faulks Rd, Aba Abia State</p>
+                        <p>Instrumentalist Needed: Pianist</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="./images/profile images/deeper life.jpg" alt="Church Image">
+                    <div class="card-info">
+                        <h3>Deeper Life International Church</h3>
+                        <p>Location: 51 Azikiwe Rd, Aba Abia State</p>
+                        <p>Instrumentalist Needed: Guitar</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="./images/profile images/download.png" alt="Church Image">
+                    <div class="card-info">
+                        <h3>Church Of God</h3>
+                        <p>Location: No 22 Nmeka Street Aba Abia State, Nigeria</p>
+                        <p>Instrumentalist Needed: Drummer</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="./images/profile images/assemblies.jpeg" alt="Church Image">
+                    <div class="card-info">
+                        <h3>Assemblies Church</h3>
+                        <p>Location: No 56 Market Rd Aba, Abia State Nigeria</p>
+                        <p>Instrumentalist Needed: Piano</p>
+                    </div>
+                </div>
+                <!-- Add more cards here -->
+            </div>
+        </div>
+       
+        
+        <!-- <div class="nowww">
+            
+            <h1> About Us </h1>
+            
+            <div class="parent">
+                <div class="child1">
+                    <img src="./images/pianist-playing-grand-piano-logo-icon-silhouette-vector-style-white-background_1047546-8491.jpg" alt="pianist">
+
+                </div>
+                <div class="child2">
+                    <img src="./images/images.png" alt="guitarst2">
+                </div>
+                <div class="child3">
+                    <img src="./images/model-church-with-clock-top_1187092-62805.jpg" alt="church">
+                </div>
+
+            </div>
+        </div> -->
+        <!-- <h1 style="text-align: center; margin-top: 60px;"> Our Goal </h1> -->
+        <div class="add">
+            <h1 style="text-align: center; margin-top: 60px;">
+                <span id="changingText">Our Goal</span>
+            </h1>
+            
+            <div class="parent">
+                <div class="mySlides fade">
+                    <img src="./images/svg/pianist-playing-grand-piano-logo-icon-silhouette-vector-style-white-background_1047546-8491-removebg-preview (1).png" alt="pianist">
+                </div>
+                <div class="mySlides fade">
+                    <img src="./images/svg/guitarist-silhouette-contour-drawing-white-black-white-background_1034909-1909-removebg-preview.png" alt="guitarist">
+                </div>
+                <div class="mySlides fade">
+                    <!-- <img src="./images/model-church-with-clock-top_1187092-62805.jpg" alt=""> -->
+                    <img src="./images/svg/drummer-removebg-preview.png" alt="drummer">
+                </div>
+                <div class="child1 slideshow-container">
+                
+                </div>
+            
+                <div class="line"></div>
+                <img src="./images/svg/images-removebg-preview.png" alt="bridge" class="text">
+                <div class="line"></div>
+            
+                <div class="child3">
+                    <img src="./images/svg/model-church-with-clock-top_1187092-62805-removebg-preview (1).png" alt="church">
+                </div>
+            </div>
+        </div>  
+        <div class="content">
+            <div class="text-containerapp">
+                <h1>MICC App is on Its Way!</h1>
+                <p>
+                    Get ready to experience a groundbreaking platform that will revolutionize how instrumentalists and churches connect. 
+                    The MICC App is designed to bridge the gap, providing seamless connections, dynamic showcases, and opportunities 
+                    like never before. Stay tuned for a transformative experience that will elevate your music ministry to the next level. 
+                    The future of worship is almost here!
+                </p>
+            </div>
+            <div class="container-app">
+                <img src="./images/profile images/app.png" alt="Illustration" class="main-svg">
+                <div class="circle circle1"></div>
+                <div class="circle circle2"></div>
+                <div class="circle circle3"></div>
+                <div class="circle circle4"></div>
+            </div>
+        </div>
+        
+        <div class="turnthis">
+        
+            <!-- Contact Us Section -->
+            <div class="contact-section">
+                <h2>Ready To Talk?</h2>
+                <p>Our team is here to answer your question</p>
+                <a href="MICcontact.html" class="contact-btn">CONTACT US</a>
+            </div>
+
+            <!-- Valued Clients Section -->
+            <div class="clients-section">
+                <h3>Our Valued Partners</h3>
+                <div class="client-logos">
+                    <img src="./images/Screenshot (495).png" alt="Client 1">
+                    <img src="./images/rrr.png" alt="Client 1">
+                    <img src="./images/Screenshot (464).png" alt="Client 1">
+                    <img src="./images/Screenshot (496).png" alt="Client 1">
+                    <img src="./images/download.jpg" alt="Client 1">
+                    <!-- <img src="../images/pianist-playing-grand-piano-logo-icon-silhouette-vector-style-white-background_1047546-8491.jpg" alt="Client 1">
+                    <img src="../images/pianist-playing-grand-piano-logo-icon-silhouette-vector-style-white-background_1047546-8491.jpg" alt="Client 1">
+                    <img src="../images/pianist-playing-grand-piano-logo-icon-silhouette-vector-style-white-background_1047546-8491.jpg" alt="Client 1"> -->
+                </div>
+            
+        </div>    
+    </div>    
+    <div class="reviews-container" id="rate">
+        <h2>Testimonials & Reviews</h2>
+        <div class="review-card">
+            <div class="review-header">
+                <div class="rating">
+                    <span>★</span><span>★</span><span>★</span><span>★</span><span>☆</span>
+                </div>
+                <h3>St Joseph Catholic Church</h3>
+            </div>
+            <p class="review-text">
+                MICC has transformed the way we connect with instrumentalists. The platform is user-friendly, and we've found talented musicians to enhance our worship sessions.
+            </p>
+        </div>
+        <div class="review-card">
+            <div class="review-header">
+                <div class="rating">
+                    <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                </div>
+                <h3>Winners Chapel</h3>
+            </div>
+            <p class="review-text">
+                An incredible experience! The MICC platform made it so easy to find skilled instrumentalists for our church. Highly recommend!
+            </p>
+        </div>
+        <!-- Additional reviews can be added here -->
+    </div>
+    
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section company-info">
+                <!-- <img src="./images/WhatsApp Image 2024-08-08 at 01.28.04_0b0785cb.jpg" alt="MICC Logo"> -->
+                <p>Welcome to <strong>M.I.C.C</strong>, where instrumentalists connect with churches to create harmonious worship experiences. Whether you're a talented instrumentalist looking to share your gift or a church seeking skilled musicians to elevate your worship services, M.I.C.C is your bridge to meaningful connections. Discover opportunities, showcase your talents, and build lasting relationships within our community. Let the power of music unite us and inspire worship like never before.</p>
+                <p>Join M.I.C.C today and become part of a network that values the beauty of live music in worship. Explore, connect, and transform worship experiences with M.I.C.C!</p>
+            </div>
+            <div class="footer-section company-links">
+                <h3>Company</h3>
+                <ul>
+                    <li><a href="#nav">Home</a></li>
+                    <!-- <li><a href="#">About Us</a></li> -->
+                    <li><a href="#ins">Instrumentalists</a></li>
+                    <li><a href="#viewAllBtn">Churches</a></li>
+                    <li><a href="MICcontact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section mail-us">
+                <h3>Mail Us</h3>
+                <p><a href="mailto:info@micc.com">info@micc.com</a></p>
+            </div>
+            <div class="footer-section facebook-widget">
+                <h3>Facebook</h3>
+                <div class="fb-page" data-href="https://www.facebook.com/profile.php?id=61563913457896" data-tabs="timeline" data-width="" data-height="" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
+                    <blockquote cite="https://www.facebook.com/profile.php?id=61563913457896" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/profile.php?id=61563913457896">Your Facebook Page</a></blockquote>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Facebook SDK -->
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v10.0"></script>
+   
+
+   </div>
+
+    <div class="mediaquerry body1">
+        <header class="header1">
+        
+            <div class="logo">
+                <a href="mediaquery.html">
+                    <img src="./images/WhatsApp Image 2024-08-08 at 01.28.04_0b0785cb.jpg" alt="logo" style="max-height: 50px;">
+                </a> 
+            </div>
+            <div class="menu-icon">
+                <h4>M.I.C.C</h4>
+            </div>
+            <div class="join">
+                <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                    <i class="fa fa-align-justify"></i> 
+                    </button>
+        
+                    
+                    <!-- Offcanvas Menu -->
+                    <div class="offcanvas offcanvas-end tech" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+                        <div class="offcanvas-header blockie">
+                            <h5 id="offcanvasRightLabel"></h5>
+                            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                        </div>
+                        <div class="offcanvas-body">
+                            <div id="dropdown-menu" class="dropdown-content">
+                                <a href="MICregistration.html">Instrumentalist Registration</a>
+                                <a href="church-registration.html">Church Registration</a>
+                                <a href="#">Profiles Directory</a>
+                                <a href="#dashboard">Dashboard</a>
+                                <a href="#video-gallery">Video Gallery</a>
+                                <a href="MICcontact.html">Contact/Booking</a>
+                                <a href="#thereview">Testimonials/thereviews</a>
+                            </div>
+                        </div>
+                    </div>
+        
+                
+            </div>
+        </header>
+    
+    
+        <section class="hero">
+    
+            <!-- <img src="./images/imageswork/240_F_702414088_YTmkiSUn63oaBRVJDapPX0rZBDmhfNCM.jpg" alt="Image 1"> -->
+        
+            <div class="reegal">
+                <h1>Find the right <span class="highlight">Instrumentalist </span> service, right away</h1>
+                <div class="search-bar">
+                    <input type="text" placeholder="Search for any service...">
+                    <button><i class="fas fa-search"></i></button>
+        
+                </div><br>
+                <button class="build"> Register as Instrumentalist</button>
+                <button class="build">Register as Church</button>
+            </div>
+        </section><br><br>
+        <div class="notecell-container ">
+            <h2>Our Available Instrumentalist</h2>
+            <div class="notecell">
+                <div class="notecell-inner">
+                    <div class="notecell-item">
+                        <img src="images/profile images/pexels-dmitry-demidov-515774-3807838.jpg" alt="John Chike">
+                        <h3>John Chike</h3>
+                        <p>Guitarist</p>
+                        <button class="button88">Message me</button>
+                    </div>
+                    <div class="notecell-item">
+                        <img src="images/profile images/pexels-boris-pavlikovsky-7715297.jpg" alt="Jane Smith">
+                        <h3>Jane Smith</h3>
+                        <p>Drummer</p>
+                        <button class="button88">Message me</button>
+                    </div>
+                    <div class="notecell-item">
+                        <img src="images/profile images/pexels-tima-miroshnichenko-6671414.jpg" alt="Mike Johnson">
+                        <h3>Mike Johnson</h3>
+                        <p>Pianist</p>
+                        <button class="button88">Message me</button>
+                    </div>
+                    <div class="notecell-item">
+                        <img src="images/profile images/pexels-thapelo-boateng-233479440-13647957.jpg" alt="Emily Davis">
+                        <h3>Emily Davis</h3>
+                        <p>Saxophonist</p>
+                        <button class="button88">Message me</button>
+                    </div>
+                </div>
+                <button class="note-btn" onclick="movenotecell(-1)">&#10094;</button>
+                <button class="note2-btn" onclick="movenotecell(1)">&#10095;</button>
+            </div>
+        </div><br><br>
+        <div class="notecell-container">
+            <h2>Churches Available to Hire</h2>
+            <div class="notecell1">
+                <div class="notecell1-inner">
+                    <div class="notecell1-item">
+                        <img src="images/profile images/deeper life.jpg" alt="John Chike">
+                        <h3>Deeper Life Church</h3>
+                        <p>No 22  Garrison Rd ABa</p>
+                        <button class="button88">Pianist needed</button>
+                    </div>
+                    <div class="notecell1-item">
+                        <img src="images/profile images/chriss.jpeg" alt="Jane Smith">
+                        <h3>Christ Embassy</h3>
+                        <p>No 2 Immaculate rd Aba </p>
+                        <button class="button88">Guitarist needed</button>
+                    </div>
+                    <div class="notecell1-item">
+                        <img src="images/profile images/download.png" alt="Mike Johnson">
+                        <h3>Redeemed Christain Church OF God/h3>
+                        <p>No 22 Male Street Aba </p>
+                        <button class="button88"> Violinist needed</button>
+                    </div>
+                    <div class="notecell1-item">
+                        <img src="images/profile images/living faith church.jpg" alt="Emily Davis">
+                        <h3>Living Faith Church</h3>
+                        <p>No 23 housing rd Aba Abia State</p>
+                        <button class="button88">Saxophonist needed</button>
+                    </div>
+                </div>
+                <button class="note-btn" onclick="movenotecell1(-1)">&#10094;</button>
+                <button class="note2-btn" onclick="movenotecell1(1)">&#10095;</button>
+            </div>
+        </div>
+        <div class="content">
+            <div class="text-container">
+                <h1>MICC App is on Its Way!</h1>
+                <p>
+                    Get ready to experience a groundbreaking platform that will revolutionize how instrumentalists and churches connect. 
+                    The MICC App is designed to bridge the gap, providing seamless connections, dynamic showcases, and opportunities 
+                    like never before. Stay tuned for a transformative experience that will elevate your music ministry to the next level. 
+                    The future of worship is almost here!
+                </p>
+            </div>
+            <div class="container">
+                <img src="images/profile images/original-ed3179e5e049d00f65513a07865b542c.png" alt="Illustration" class="main-svg">
+                <div class="circle circle1"></div>
+                <div class="circle circle2"></div>
+                <div class="circle circle3"></div>
+                <div class="circle circle4"></div>
+            </div>
+        </div>
+        <div class="shiftthis">
+            
+            <!-- Contact Us Section -->
+            <div class="contact1section">
+                <h2>Ready To Talk?</h2>
+                <p>Our team is here to answer your question</p>
+                <a href="MICcontact.html" class="contact1btn">CONTACT US</a>
+            </div>
+    
+            <!-- Valued Clients Section -->
+            <div class="clients-section">
+                <h3>Our Valued Partners</h3>
+                <div class="client-logos">
+                    <img src="./images/Screenshot (495).png" alt="Client 1">
+                    <img src="./images/rrr.png" alt="Client 1">
+                    <img src="./images/Screenshot (464).png" alt="Client 1">
+                    <img src="./images/Screenshot (496).png" alt="Client 1">
+                    <img src="./images/download.jpg" alt="Client 1">
+                </div>
+            </div>
+        </div>    
+        <div class="thereviews-container" id="thereview">
+            <h2>Testimonials & thereviews</h2>
+            <div class="thereview-card">
+                <div class="thereview-header">
+                    <div class="rating">
+                        <span>★</span><span>★</span><span>★</span><span>★</span><span>☆</span>
+                    </div>
+                    <h3>John Doe</h3>
+                </div>
+                <p class="thereview-text">
+                    MICC has transformed the way we connect with instrumentalists. The platform is user-friendly, and we've found talented musicians to enhance our worship sessions.
+                </p>
+            </div>
+            <div class="thereview-card">
+                <div class="thereview-header">
+                    <div class="rating">
+                        <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                    </div>
+                    <h3>Jane Smith</h3>
+                </div>
+                <p class="thereview-text">
+                    An incredible experience! The MICC platform made it so easy to find skilled instrumentalists for our church. Highly recommend!
+                </p>
+            </div>
+            <!-- Additional thereviews can be added here -->
+        </div>
+        
+    
+        <!-- thefooter Section -->
+        <thefooter>
+            <div class="thefooter-container">
+                <div class="thefooter-section company-info">
+                    <img src="./images/WhatsApp Image 2024-08-08 at 01.28.04_0b0785cb.jpg" alt="MICC Logo">
+                    <p>Welcome to <strong>M.I.C.C</strong>, where instrumentalists connect with churches to create harmonious worship experiences. Whether you're a talented instrumentalist looking to share your gift or a church seeking skilled musicians to elevate your worship services, M.I.C.C is your bridge to meaningful connections. Discover opportunities, showcase your talents, and build lasting relationships within our community. Let the power of music unite us and inspire worship like never before.</p>
+                    <p>Join M.I.C.C today and become part of a network that values the beauty of live music in worship. Explore, connect, and transform worship experiences with M.I.C.C!</p>
+                </div>
+                <div class="thefooter-section company-links">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Work Showcase</a></li>
+                        <li><a href="#">Career</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="thefooter-section mail-us">
+                    <h3>Mail Us</h3>
+                    <p><a href="mailto:info@micc.com">info@micc.com</a></p>
+                </div>
+                <div class="thefooter-section facebook-widget">
+                    <h3>Facebook</h3>
+                    <div class="fb-page" data-href="https://www.facebook.com/profile.php?id=61563913457896" data-tabs="timeline" data-width="" data-height="" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
+                        <blockquote cite="https://www.facebook.com/profile.php?id=61563913457896" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/profile.php?id=61563913457896">Your Facebook Page</a></blockquote>
+                    </div>
+                </div>
+            </div>
+        </thefooter>
+    
+        <!-- Facebook SDK -->
+        <div id="fb-root"></div>
+        <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v10.0"></script>
+    </div>   
+    
+       
+    
+    
+        
+    
+    
+   
+
+          
+       
+  
+
+
+
+    
+
+
+
+    <!-- <div class="carousel-controls">
+        <button onclick="scrollCarousel(-1)">Previous</button>
+        <button onclick="scrollCarousel(1)">Next</button>
+    </div> -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script> -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script> -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="./bootstrap/js/bootstrap.bundle.min.js"></script>
+   <script src="./javscript/MICindex.js"></script>
+   
+
+       
+</body>
+</html>

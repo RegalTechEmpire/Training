@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Footer with Facebook Widget</title>
+    <style>
+            /* Updated Footer Section CSS */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        footer {
+            background-color: #f8f9fa;
+            padding: 20px 0;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+            align-items: flex-start; /* Adjusted to keep all items at the top */
+        }
+
+        .footer-section {
+            flex: 1;
+            margin: 10px;
+            min-width: 250px;
+        }
+
+        .company-info img {
+            max-width: 100px;
+            margin-bottom: 10px;
+        }
+
+        .company-info p {
+            color: #757575;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .company-links h3, .mail-us h3, .facebook-widget h3 {
+            font-size: 16px;
+            color: #343a40;
+            margin-bottom: 10px;
+        }
+
+        .company-links ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .company-links ul li {
+            margin-bottom: 5px;
+        }
+
+        .company-links ul li a {
+            color: #007bff;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .mail-us p, .mail-us a {
+            font-size: 14px;
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .facebook-widget {
+            text-align: center;
+            margin-top: 20px; /* Adjust the margin-top for better spacing */
+        }
+        /* Reviews Section */
+.reviews-container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.reviews-container h2 {
+    font-size: 28px;
+    margin-bottom: 30px;
+    color: #343a40;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.review-card {
+    background-color: #ffffff;
+    padding: 15px;
+    margin: 20px 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.review-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.review-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.rating span {
+    font-size: 24px;
+    color: #f4c150;
+    margin-right: 5px;
+    animation: bounce 1.2s ease-in-out infinite alternate;
+}
+
+.review-card h3 {
+    font-size: 18px;
+    color: #007bff;
+    margin-left: 10px;
+}
+
+.review-text {
+    font-size: 16px;
+    color: #6c757d;
+    line-height: 1.5;
+    animation: fadeInUp 1.5s ease-in-out;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .reviews-container {
+        padding: 15px;
+    }
+
+    .review-card {
+        margin: 15px 0;
+    }
+
+    .review-card h3 {
+        font-size: 16px;
+    }
+
+    .review-text {
+        font-size: 14px;
+    }
+}
+
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .footer-container {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .footer-section {
+                margin: 10px 0;
+            }
+
+            .facebook-widget {
+                margin-top: 10px;
+                width: 100%; /* Ensure the widget takes up full width */
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="reviews-container">
+        <h2>What People Are Saying</h2>
+        <div class="review-card">
+            <div class="review-header">
+                <div class="rating">
+                    <span>★</span><span>★</span><span>★</span><span>★</span><span>☆</span>
+                </div>
+                <h3>John Doe</h3>
+            </div>
+            <p class="review-text">
+                MICC has transformed the way we connect with instrumentalists. The platform is user-friendly, and we've found talented musicians to enhance our worship sessions.
+            </p>
+        </div>
+        <div class="review-card">
+            <div class="review-header">
+                <div class="rating">
+                    <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                </div>
+                <h3>Jane Smith</h3>
+            </div>
+            <p class="review-text">
+                An incredible experience! The MICC platform made it so easy to find skilled instrumentalists for our church. Highly recommend!
+            </p>
+        </div>
+        <!-- Additional reviews can be added here -->
+    </div>
+    
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section company-info">
+                <img src="your-logo.png" alt="MICC Logo">
+                <p>Welcome to <strong>M.I.C.C</strong>, where instrumentalists connect with churches to create harmonious worship experiences. Whether you're a talented instrumentalist looking to share your gift or a church seeking skilled musicians to elevate your worship services, M.I.C.C is your bridge to meaningful connections. Discover opportunities, showcase your talents, and build lasting relationships within our community. Let the power of music unite us and inspire worship like never before.</p>
+                <p>Join M.I.C.C today and become part of a network that values the beauty of live music in worship. Explore, connect, and transform worship experiences with M.I.C.C!</p>
+            </div>
+            <div class="footer-section company-links">
+                <h3>Company</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Work Showcase</a></li>
+                    <li><a href="#">Career</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section mail-us">
+                <h3>Mail Us</h3>
+                <p><a href="mailto:info@micc.com">info@micc.com</a></p>
+            </div>
+            <div class="footer-section facebook-widget">
+                <h3>Facebook</h3>
+                <div class="fb-page" data-href="https://www.facebook.com/profile.php?id=61563913457896" data-tabs="timeline" data-width="" data-height="" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
+                    <blockquote cite="https://www.facebook.com/profile.php?id=61563913457896" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/profile.php?id=61563913457896">Your Facebook Page</a></blockquote>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Facebook SDK -->
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v10.0"></script>
+
+</body>
+</html>

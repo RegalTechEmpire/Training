@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./Media styling/font-awesome.min.css">
+    <!-- <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"> -->
+    <link rel="stylesheet" href="./Media styling/MICindex.css">
+</head>
+<style>
+    .notshow{
+        display: none;
+    }
+    .draw{
+    background-image: url(../images/imageswork/240_F_702414088_YTmkiSUn63oaBRVJDapPX0rZBDmhfNCM.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.contact-page {
+    padding: 50px;
+    background: linear-gradient( #007bff, rgb(205, 201, 201));
+    color: #333;
+    /* width: 55%; */
+    margin: auto;
+    border-radius: 10px;
+    margin-top: 5px;
+}
+
+.faq-section {
+    margin-bottom: 50px;
+}
+
+.faq h4 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.faq p {
+    font-size: 1em;
+    margin-bottom: 20px;
+}
+
+.ask-question-section h3 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+#ask-question-form {
+    display: flex;
+    flex-direction: column;
+}
+
+#ask-question-form textarea {
+    padding: 15px;
+    font-size: 1em;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+    resize: none;
+}
+
+#ask-question-form button {
+    padding: 15px;
+    font-size: 1em;
+    background-color: blue;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#ask-question-form button:hover {
+    background-color: skyblue;
+}
+
+/* Add animation background */
+.turnthis {
+    animation: backgroundAnimation 10s infinite alternate;
+}
+
+@keyframes backgroundAnimation {
+    from {
+        background: blue;
+    }
+    to {
+        background: skyblue;
+    }
+}
+     @media (max-width: 768px){
+        .show{
+            display: none;
+        }
+        .notshow{
+            display: block;
+        }
+        header {
+            background-color: #0000008d;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            border-bottom: 1px solid #ddd;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            color: whitesmoke;
+        }
+        body{
+            height: 150vh;
+        }
+        
+
+        .menu-icon {
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .logo img {
+            /* width: 120px; */
+            object-fit: cover;
+            width: 70px;
+        }
+        .menu-icon {
+                font-size: 24px;
+                cursor: pointer;
+            }
+            .tech {
+                background-color: rgba(0, 0, 0, 0.9); /* Slightly more opaque to avoid the black screen */
+                color: white; /* Text color for contrast */
+                transition: transform 0.3s ease-in-out; /* Smooth transition */
+            }
+            .offcanvas {
+                visibility: hidden;
+                transform: translateX(100%);
+                    z-index: 1050; /* Ensures the offcanvas is on top of everything else */
+                    background-color: rgba(0, 0, 0, 0.9); /* Slightly transparent black */
+                
+            }
+            .offcanvas.show {
+                visibility: visible;
+                /* transform: translateX(0); */
+                transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+                
+            }
+            .offcanvas-end {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+
+            .offcanvas.show.offcanvas-end {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            /* padding: 0 20px;
+             */
+             padding: 15px 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            height: 20vh;
+            color: #fff;
+        }
+
+        .logo {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #fff;
+        }
+        .blockie {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.dropdown-content {
+    /* display: none; */
+    /* position: absolute; */
+    top: 50px;
+    right: 40px;
+    /* background-color: rgba(0, 0, 0, 0.455) !important; */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    color: blue;
+    /* z-index: 1000; */
+}
+
+.dropdown-content a {
+    color: rgb(251, 249, 249) !important;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: rgba(0, 0, 255, 0.623);
+}
+
+        .join a {
+            font-size: 18px;
+            color: #333;
+            text-decoration: none;
+        }
+
+        /* Hero Section Styles */
+        .hero {
+            /* background-image: url(./images/imageswork/240_F_702414088_YTmkiSUn63oaBRVJDapPX0rZBDmhfNCM.jpg); */
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+            background-image: url(./images/imageswork/240_F_614901400_cAPCKWLiNVCJcGu05WIclKBwEz33icRf.jpg);
+            /* background: linear-gradient(#007bff, whitesmoke); */
+        }
+
+        .hero h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .hero .highlight {
+            color: #2019e0;
+        }
+    
+
+        .search-bar {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .search-bar input {
+            padding: 10px;
+            border-radius: 5px 0 0 5px;
+            border: none;
+            outline: none;
+            width: 300px;
+            font-size: 16px;
+        }
+
+        .search-bar button {
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .search-bar button i {
+            font-size: 16px;
+        }
+
+        /* Categories Section Styles */
+        .categories {
+            display: flex;
+            /* flex-direction: row; */
+            justify-content: center ;
+            margin: 20px 0;
+            gap: 20px;
+        }
+
+        .category {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 150px;
+        }
+        .category img{
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        .category i {
+            font-size: 36px;
+            color: #007bff;
+            margin-bottom: 10px;
+        }
+
+        .category p {
+            font-size: 14px;
+            color: #333;
+        }
+        .build {
+    /* margin: 10px 0; */
+    padding: 5px ;
+    background: linear-gradient(to right, #007bff, rgb(205, 201, 201));
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    /* text-align: center; */
+    /* transition: background-color 0.3s, transform 0.3s; */
+    /* font-size: 18px; */
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border: none;
+}
+
+.build:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+.notecell-container {
+            text-align: center;
+            width: 100%;
+            max-width: 1000px;
+            /* height: 100vh; */
+        }
+
+        h2 {
+            color: #0066ff;
+        }
+
+        .notecell {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            background-color: #0066ff;
+            padding: 20px 0;
+            border-radius: 10px;
+        }
+
+        .notecell-inner {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .notecell-item {
+            min-width: 250px;
+            margin: 0 10px;
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .notecell-item img {
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+        }
+
+        h3 {
+            margin: 10px 0 5px;
+            color: #333;
+        }
+
+        p {
+            color: #777;
+        }
+
+        .button88 {
+            margin-top: 10px;
+            padding: 10px 15px;
+            background-color: #3399ff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .button88:hover {
+            background-color: #1a73e8;
+        }
+     }
+</style>
+
+<body>
+    <div class="show">
+        <header>
+            <div class="navbar">
+                <div class="logo d-flex align-items-center"> 
+                    <a href="MICindex.html">
+                        <img src="./images/WhatsApp Image 2024-08-08 at 01.28.04_0b0785cb.jpg" alt="logo" style="max-height: 50px;">
+                    </a> 
+                    <span class="search-bar d-flex ms-3">
+                        <input type="text" id="search-input" class="form-control" placeholder="Search by name, instrument, or location">
+                        <button id="search-btn" class="btn btn-primary ">Search</button>
+                    </span>
+                </div>
+            
+                <!-- <div class="menu-icon" onclick="toggleDropdown()">☰</div> -->
+                <!-- <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><i class="fa fa-align-justify"></i></button> -->
+                <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                <i class="fa fa-align-justify"></i> 
+                </button>
+    
+                
+                <!-- Offcanvas Menu -->
+                <div class="offcanvas offcanvas-end tech" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+                    <div class="offcanvas-header blockie">
+                        <h5 id="offcanvasRightLabel">Menu</h5>
+                        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <div id="dropdown-menu" class="dropdown-content">
+                            <a href="MICindex.html">Home Page</a>
+                            <a href="instrumentalist-registration.html">Instrumentalist Registration</a>
+                            <a href="church-registration.html">Church Registration</a>
+                            <a href="#profiles-directory">Profiles Directory</a>
+                            <a href="#dashboard">Dashboard</a>
+                            <a href="#video-gallery">Video Gallery</a>
+                            <a href="#contact-booking">Contact/Booking</a>
+                            <a href="#testimonials-reviews">Testimonials/Reviews</a>
+                        </div>
+                    </div>
+                </div>
+    
+            </div>
+           
+        </header>
+       
+        <div class="carousel">
+            <div class="carousel-item active" id="item1">
+                <img src="./images/imageswork/pexels-anthonyshkraba-production-8040841.jpg" alt="Image 1">
+                <div class="carousel-content">
+                    <div class="carousel-text">
+                        <h1>M.I.C.C</h1>
+                        <h1><span id="typed1"></span></h1>
+                
+                    </div>
+                    <div class="buttons">
+                        <a href="instrumentalist-registration.html" class="btn">Register as Instrumentalist</a>
+                        <a href="church-registration.html" class="btn">Register as Church</a>
+                    </div>
+                </div>
+            
+            </div>
+            <div class="carousel-item" id="item2">
+                <img src="./images/imageswork/pexels-yankrukov-9010081.jpg" alt="Image 2">
+                <div class="carousel-content">
+                    <div class="carousel-text">
+                        <h1>M.I.C.C </h1>
+                        <h1><span id="typed2"></span></h1>
+                     
+                    </div>
+                    <div class="buttons">
+                        <a href="instrumentalist-registration.html" class="btn">Register as Instrumentalist</a>
+                        <a href="church-registration.html" class="btn">Register as Church</a>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item" id="item3">
+                <img src="./images/imageswork/240_F_702414088_YTmkiSUn63oaBRVJDapPX0rZBDmhfNCM.jpg" alt="Image 3">
+                <div class="carousel-content">
+                    <div class="carousel-text">
+                        <h1>M.I.C.C</h1>
+                        <h1><span id="typed3"></span></h1>
+                      
+                    </div>
+               
+                    <div class="buttons">
+                        <a href="instrumentalist-registration.html" class="btn">Register as Instrumentalist</a>
+                        <a href="church-registration.html" class="btn">Register as Church</a>
+                            
+                    </div>
+                    
+                
+                </div>
+       
+            </div>
+        </div>
+    </div>
+    <div class="notshow">
+        <header>
+        
+            <div class="logo">
+                <a href="mediaquery.html">
+                    <img src="./images/WhatsApp Image 2024-08-08 at 01.28.04_0b0785cb.jpg" alt="logo" style="max-height: 50px;">
+                </a> 
+            </div>
+            <div class="menu-icon">
+                <h4>M.I.C.C</h4>
+            </div>
+            <div class="join">
+                <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                    <i class="fa fa-align-justify"></i> 
+                    </button>
+        
+                    
+                    <!-- Offcanvas Menu -->
+                    <div class="offcanvas offcanvas-end tech" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+                        <div class="offcanvas-header blockie">
+                            <h5 id="offcanvasRightLabel"></h5>
+                            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                        </div>
+                        <div class="offcanvas-body">
+                            <div id="dropdown-menu" class="dropdown-content">
+                                 
+                                <a href="mediaquery.html">Home Page</a>
+                                <a href="MICregistration.html">Instrumentalist Registration</a>
+                                <a href="church-registration.html">Church Registration</a>
+                                <a href="#non">Profiles Directory</a>
+                                <a href="#dashboard">Dashboard</a>
+                                <a href="#video-gallery">Video Gallery</a>
+                                <a href="MICcontact.html">Contact/Booking</a>
+                                <a href="#review">Testimonials/Reviews</a>
+                            </div>
+                        </div>
+                    </div>
+        
+                </div>
+            </div>
+        </header>
+    </div>
+    <div class="draw">
+        <div id="contact" class="contact-page">
+            <h2>Contact Us</h2>
+
+            <!-- FAQ Section -->
+            <div class="faq-section">
+                <h3>Frequently Asked Questions</h3>
+                <div class="faq">
+                    <h4>How does MICC connect instrumentalists with churches?</h4>
+                    <p>MICC allows churches to find and hire instrumentalists based on their skills and experience.</p>
+                </div>
+                <div class="faq">
+                    <h4>What instruments can I register for?</h4>
+                    <p>You can register for any musical instrument, including piano, guitar, drums, and more.</p>
+                </div>
+                <div class="faq">
+                    <h4>How do I update my profile?</h4>
+                    <p>You can update your profile by logging in and navigating to the profile section.</p>
+                </div>
+                <!-- Add more FAQs as needed -->
+            </div>
+
+            <!-- Ask a Question Section -->
+            <div class="ask-question-section">
+                <h3>Have a Question?</h3>
+                <form id="ask-question-form">
+                    <textarea name="question" id="question" rows="5" placeholder="Type your question here..."></textarea>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="./bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="./javscript/MICindex.js"></script>
+</body>
+</html>

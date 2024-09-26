@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MICC Contact Us</title>
+    <style>
+        /* Styles for the Contact Us Section */
+        .contact-section {
+            text-align: center;
+            background: linear-gradient(90deg, blue, skyblue);
+            color: white;
+            padding: 50px 0;
+        }
+
+        .contact-section h2 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .contact-section p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+
+        .contact-btn {
+            padding: 15px 30px;
+            background-color: #fff;
+            color: blue;
+            text-transform: uppercase;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .contact-btn:hover {
+            background-color: skyblue;
+            color: #fff;
+        }
+
+        /* Styles for the Valued Clients Section */
+        .clients-section {
+            padding: 30px 0;
+            text-align: center;
+            background-color: white;
+        }
+
+        .clients-section h3 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .client-logos {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .client-logos img {
+            max-width: 150px;
+            max-height: 100px;
+            object-fit: contain;
+            filter: grayscale(100%);
+            transition: filter 0.3s ease;
+        }
+
+        .client-logos img:hover {
+            filter: none;
+        }
+
+        /* Styles for the Contact Page */
+        .contact-page {
+            padding: 50px;
+            background: #f0f0f0;
+            color: #333;
+        }
+
+        .faq-section {
+            margin-bottom: 50px;
+        }
+
+        .faq h4 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .faq p {
+            font-size: 1em;
+            margin-bottom: 20px;
+        }
+
+        .ask-question-section h3 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        #ask-question-form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        #ask-question-form textarea {
+            padding: 15px;
+            font-size: 1em;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            margin-bottom: 20px;
+        }
+
+        #ask-question-form button {
+            padding: 15px;
+            font-size: 1em;
+            background-color: blue;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        #ask-question-form button:hover {
+            background-color: skyblue;
+        }
+
+        /* Add animation background */
+        body {
+            animation: backgroundAnimation 10s infinite alternate;
+        }
+
+        @keyframes backgroundAnimation {
+            from {
+                background: blue;
+            }
+            to {
+                background: skyblue;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Contact Us Section -->
+    <div class="contact-section">
+        <h2>Ready To Talk?</h2>
+        <p>Our team is here to answer your question</p>
+        <a href="#contact" class="contact-btn">CONTACT US</a>
+    </div>
+
+    <!-- Valued Clients Section -->
+    <div class="clients-section">
+        <h3>Our Valued Clients</h3>
+        <div class="client-logos">
+            <img src="../images/pianist-playing-grand-piano-logo-icon-silhouette-vector-style-white-background_1047546-8491.jpg" alt="Client 1">
+            <img src="../images/pianist-playing-grand-piano-logo-icon-silhouette-vector-style-white-background_1047546-8491.jpg" alt="Client 1">
+            <img src="../images/pianist-playing-grand-piano-logo-icon-silhouette-vector-style-white-background_1047546-8491.jpg" alt="Client 1">
+            <img src="../images/pianist-playing-grand-piano-logo-icon-silhouette-vector-style-white-background_1047546-8491.jpg" alt="Client 1">
+            <img src="../images/pianist-playing-grand-piano-logo-icon-silhouette-vector-style-white-background_1047546-8491.jpg" alt="Client 1">
+            <img src="../images/pianist-playing-grand-piano-logo-icon-silhouette-vector-style-white-background_1047546-8491.jpg" alt="Client 1">
+            <img src="../images/pianist-playing-grand-piano-logo-icon-silhouette-vector-style-white-background_1047546-8491.jpg" alt="Client 1">
+            <img src="../images/pianist-playing-grand-piano-logo-icon-silhouette-vector-style-white-background_1047546-8491.jpg" alt="Client 1">
+        </div>
+    </div>
+
+    <!-- Contact Page -->
+    <div id="contact" class="contact-page">
+        <h2>Contact Us</h2>
+
+        <!-- FAQ Section -->
+        <div class="faq-section">
+            <h3>Frequently Asked Questions</h3>
+            <div class="faq">
+                <h4>How does MICC connect instrumentalists with churches?</h4>
+                <p>MICC allows churches to find and hire instrumentalists based on their skills and experience.</p>
+            </div>
+            <div class="faq">
+                <h4>What instruments can I register for?</h4>
+                <p>You can register for any musical instrument, including piano, guitar, drums, and more.</p>
+            </div>
+            <div class="faq">
+                <h4>How do I update my profile?</h4>
+                <p>You can update your profile by logging in and navigating to the profile section.</p>
+            </div>
+            <!-- Add more FAQs as needed -->
+        </div>
+
+        <!-- Ask a Question Section -->
+        <div class="ask-question-section">
+            <h3>Have a Question?</h3>
+            <form id="ask-question-form">
+                <textarea name="question" id="question" rows="5" placeholder="Type your question here..."></textarea>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript for form submission
+        document.getElementById('ask-question-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const question = document.getElementById('question').value;
+            if (question) {
+                alert('Thank you for your question! We will get back to you soon.');
+                // Optionally, send the question to your server or handle it as needed
+            } else {
+                alert('Please enter a question.');
+            }
+        });
+    </script>
+</body>
+</html>

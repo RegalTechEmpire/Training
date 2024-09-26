@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .carousel-container-x9x9 {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    overflow: hidden;
+    background: linear-gradient(to right, #007bff, whitesmoke);
+    border-radius: 15px;
+    padding: 20px;
+}
+
+.carousel-inner-wrapper-x9x9 {
+    overflow: hidden;
+    width: 100%;
+}
+
+.carousel-inner-x9x9 {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-item-x9x9 {
+    min-width: 25%;
+    box-sizing: border-box;
+    padding: 10px;
+    text-align: center;
+    background: white;
+    border-radius: 10px;
+    margin: 0 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-item-x9x9 img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 15px;
+    border-radius: 50%;
+}
+
+.carousel-btn-left-x9x9, .carousel-btn-right-x9x9 {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #0066ff;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 50%;
+    z-index: 10;
+}
+
+.carousel-btn-left-x9x9 {
+    left: 10px;
+}
+
+.carousel-btn-right-x9x9 {
+    right: 10px;
+}
+
+.need-btn-x9x9 {
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+</style>
+<body>
+    <div class="carousel-container-x9x9">
+        <button class="carousel-btn-left-x9x9">&lt;</button>
+        <div class="carousel-inner-wrapper-x9x9">
+            <div class="carousel-inner-x9x9">
+                <div class="carousel-item-x9x9">
+                    <img src="church-logo-1.png" alt="Deeper Life Church">
+                    <h3>Deeper Life Church</h3>
+                    <p>No 22 Garrison Rd Aba</p>
+                    <button class="need-btn-x9x9">Pianist needed</button>
+                </div>
+                <div class="carousel-item-x9x9">
+                    <img src="church-logo-2.png" alt="Christ Embassy">
+                    <h3>Christ Embassy</h3>
+                    <p>No 2 Immaculate Rd Aba</p>
+                    <button class="need-btn-x9x9">Guitarist needed</button>
+                </div>
+                <div class="carousel-item-x9x9">
+                    <img src="church-logo-3.png" alt="Redeemed Church OF God">
+                    <h3>Redeemed Church OF God</h3>
+                    <p>No 22 Male Street Aba</p>
+                    <button class="need-btn-x9x9">Violinist needed</button>
+                </div>
+                <div class="carousel-item-x9x9">
+                    <img src="church-logo-4.png" alt="Living Faith Church">
+                    <h3>Living Faith Church</h3>
+                    <p>No 23 Housing Rd Aba Abia State</p>
+                    <button class="need-btn-x9x9">Saxophonist needed</button>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-btn-right-x9x9">&gt;</button>
+    </div>
+
+    <script>
+        
+        
+        let currentIndexX9X9 = 0;
+
+document.querySelector('.carousel-btn-left-x9x9').addEventListener('click', () => {
+    moveCarouselX9X9(-1);
+});
+
+document.querySelector('.carousel-btn-right-x9x9').addEventListener('click', () => {
+    moveCarouselX9X9(1);
+});
+
+function moveCarouselX9X9(direction) {
+    const itemsX9X9 = document.querySelectorAll('.carousel-item-x9x9');
+    const totalItemsX9X9 = itemsX9X9.length;
+    const itemWidthX9X9 = itemsX9X9[0].offsetWidth + 20; // 20px margin
+
+    // Calculate new index
+    currentIndexX9X9 = (currentIndexX9X9 + direction + totalItemsX9X9) % totalItemsX9X9;
+
+    // Calculate offset
+    const offsetX9X9 = -currentIndexX9X9 * itemWidthX9X9;
+
+    // Apply transform
+    document.querySelector('.carousel-inner-x9x9').style.transform = `translateX(${offsetX9X9}px)`;
+}
+
+    </script>
+    
+</body>
+</html>

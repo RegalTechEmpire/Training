@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instrumentalist Profile</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./Media styling/font-awesome.min.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: url('./') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+                
+header {
+    position: fixed;
+    width: 100%;
+    margin: auto;
+    top: 0;
+    z-index: 100;
+}
+.logo{
+    margin-left: 25px;
+    
+}
+.logo img{
+    width: 50px;
+    object-fit: cover;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+}
+
+.menu-icon {
+    font-size: 24px;
+    cursor: pointer;
+}
+.tech {
+    background-color: rgba(0, 0, 0, 0.9); /* Slightly more opaque to avoid the black screen */
+    color: white; /* Text color for contrast */
+    transition: transform 0.3s ease-in-out; /* Smooth transition */
+}
+.offcanvas {
+    visibility: hidden;
+    transform: translateX(100%);
+        z-index: 1050; /* Ensures the offcanvas is on top of everything else */
+        background-color: rgba(0, 0, 0, 0.9); /* Slightly transparent black */
+    
+}
+.offcanvas.show {
+    visibility: visible;
+    /* transform: translateX(0); */
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    
+}
+.offcanvas-end {
+    transform: translateX(100%);
+    opacity: 0;
+}
+
+.offcanvas.show.offcanvas-end {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.blockie {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.dropdown-content {
+    /* display: none; */
+    /* position: absolute; */
+    top: 50px;
+    right: 40px;
+    /* background-color: rgba(0, 0, 0, 0.455) !important; */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    color: blue;
+    /* z-index: 1000; */
+}
+
+.dropdown-content a {
+    color: rgb(251, 249, 249) !important;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: rgba(0, 0, 255, 0.623);
+}
+
+.search-bar {
+    /* max-width: 600px; */
+    margin:  auto;
+    /* width: 80%; */
+    display: flex;
+    /* vertical-align: middle; */
+    /* display: inline; */
+
+}
+
+.search-bar input {
+    /* flex: 1; */
+    padding: 5px;
+    border: none;
+    border-radius: 5px 0 0 5px;
+    font-size: 1rem;
+    outline: #0056b3;
+}
+
+.search-bar button {
+    padding: 5px 10px;
+    border: none;
+    background-color: #0056b3;
+    color: #fff;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.search-bar button:hover {
+    background-color: #0056b3;
+}
+        .profile-header {
+            position: relative;
+            text-align: center;
+            background-color: rgba(51, 51, 51, 0.8);
+            padding: 0;
+            color: #fff;
+        }
+
+        .cover-photo {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            opacity: 0.8;
+        }
+
+        .profile-container {
+            width: 90%;
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            position: relative;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        .profile-content {
+            flex: 1;
+            margin-right: 20px;
+        }
+
+        .profile-picture-container {
+            text-align: center;
+            margin-top: -75px;
+            position: relative;
+        }
+
+        .profile-picture {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 5px solid white;
+            object-fit: cover;
+            position: relative;
+            z-index: 1;
+        }
+
+        .profile-picture-container button,
+        .profile-header button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            margin-top: 10px;
+            display: inline-block;
+        }
+
+        .profile-header button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            z-index: 1;
+        }
+
+        h2 {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .media-cart {
+            margin-top: 20px;
+            border-top: 1px solid #ddd;
+            padding-top: 20px;
+        }
+
+        .media-cart input {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        #mediaGallery img, #mediaGallery video {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            margin: 5px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .chatbox {
+            width: 300px;
+            height: 400px;
+            border-top: 1px solid #ddd;
+            padding-top: 20px;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        #chatMessages {
+            height: calc(100% - 60px);
+            overflow-y: scroll;
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+        }
+
+        #chatMessages p {
+            margin: 5px 0;
+            padding: 10px;
+            background-color: #e1f5fe;
+            border-radius: 5px;
+        }
+
+        #chatInput, #sendMessage, #recordButton {
+            width: calc(100% - 80px);
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        #sendMessage {
+            width: 70px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        #recordButton {
+            background-color: #ff5722;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .profile-container {
+                flex-direction: column;
+            }
+
+            .profile-content {
+                margin-right: 0;
+            }
+
+            .chatbox {
+                width: 100%;
+                height: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo d-flex align-items-center"> 
+                <a href="MICindex.html">
+                    <img src="./images/WhatsApp Image 2024-08-08 at 01.28.04_0b0785cb.jpg" alt="logo" style="max-height: 50px;">
+                </a> 
+                <span class="search-bar d-flex ms-3">
+                    <input type="text" id="search-input" class="form-control" placeholder="Search by name, instrument, or location">
+                    <button id="search-btn" class="btn btn-primary ">Search</button>
+                </span>
+            </div>
+          
+        
+            <!-- <div class="menu-icon" onclick="toggleDropdown()">☰</div> -->
+            <!-- <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><i class="fa fa-align-justify"></i></button> -->
+            <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+            <i class="fa fa-align-justify"></i> 
+            </button>
+
+            
+            <!-- Offcanvas Menu -->
+            <div class="offcanvas offcanvas-end tech" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+                <div class="offcanvas-header blockie">
+                    <h5 id="offcanvasRightLabel"></h5>
+                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <div id="dropdown-menu" class="dropdown-content">
+                        <a href="MICregistration.html">Instrumentalist Registration</a>
+                        <a href="church-registration.html">Church Registration</a>
+                        <a href="#profiles-directory">Profiles Directory</a>
+                        <a href="#dashboard">Dashboard</a>
+                        <a href="#video-gallery">Video Gallery</a>
+                        <a href="#contact-booking">Contact/Booking</a>
+                        <a href="#rate">Testimonials/Reviews</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+       
+    </header>
+    <div class="profile-header">
+        <input type="file" id="coverPhotoUpload" accept="image/*" hidden>
+        <img id="coverPhoto" class="cover-photo" src="default-cover.jpg" alt="Cover Photo">
+        <button id="uploadCoverPhoto"> + Cover Photo</button>
+    </div>
+
+    <div class="profile-container">
+        <div class="profile-content">
+            <div class="profile-picture-container">
+                <input type="file" id="profilePhotoUpload" accept="image/*" hidden>
+                <img id="profilePhoto" class="profile-picture" src="default-profile.jpg" alt="Profile Picture">
+                <button id="uploadProfilePhoto"> + Profile Picture</button>
+            </div>
+            <h2 id="profileName"></h2>
+            <div id="profileDetails"></div>
+
+            <h3>Media Cart</h3>
+            <div class="media-cart">
+                <input type="file" accept="image/,video/" id="mediaUpload">
+                <div id="mediaGallery"></div>
+            </div>
+        </div>
+
+        <div class="chatbox">
+            <div id="chatMessages"></div>
+            <input type="text" id="chatInput" placeholder="Type your message...">
+            <button id="sendMessage">Send</button>
+            <button id="recordButton">Record</button>
+        </div>
+    </div>
+
+    <script src="./bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Load profile data
+            let profileData = JSON.parse(localStorage.getItem('instrumentalistData'));
+
+            if (profileData) {
+                document.getElementById('profileName').textContent = profileData.name;
+                document.getElementById('profileDetails').innerHTML = `
+                    <p><strong>Instrument:</strong> ${profileData.instrument}</p>
+                    <p><strong>Years of Experience:</strong> ${profileData.years}</p>
+                    <p><strong>Location:</strong> ${profileData.location}</p>
+                    <p><strong>Rating:</strong> ${profileData.rating}/5</p>
+                    <p><strong>Bio:</strong> ${profileData.bio}</p>
+                `;
+            }
+
+            // Profile photo upload
+            document.getElementById('uploadProfilePhoto').addEventListener('click', function() {
+                document.getElementById('profilePhotoUpload').click();
+            });
+
+            document.getElementById('profilePhotoUpload').addEventListener('change', function(e) {
+                let file = e.target.files[0];
+                let reader = new FileReader();
+
+                reader.onload = function(event) {
+                    document.getElementById('profilePhoto').src = event.target.result;
+                    localStorage.setItem('profilePhoto', event.target.result);
+                };
+
+                reader.readAsDataURL(file);
+            });
+
+            // Load profile photo from local storage
+            let storedProfilePhoto = localStorage.getItem('profilePhoto');
+            if (storedProfilePhoto) {
+                document.getElementById('profilePhoto').src = storedProfilePhoto;
+            }
+
+            // Cover photo upload
+            document.getElementById('uploadCoverPhoto').addEventListener('click', function() {
+                document.getElementById('coverPhotoUpload').click();
+            });
+
+            document.getElementById('coverPhotoUpload').addEventListener('change', function(e) {
+                let file = e.target.files[0];
+                let reader = new FileReader();
+
+                reader.onload = function(event) {
+                    document.getElementById('coverPhoto').src = event.target.result;
+                    localStorage.setItem('coverPhoto', event.target.result);
+                };
+
+                reader.readAsDataURL(file);
+            });
+
+            // Load cover photo from local storage
+            let storedCoverPhoto = localStorage.getItem('coverPhoto');
+            if (storedCoverPhoto) {
+                document.getElementById('coverPhoto').src = storedCoverPhoto;
+            }
+
+            // Media upload
+            document.getElementById('mediaUpload').addEventListener('change', function(e) {
+                let files = e.target.files;
+                let gallery = document.getElementById('mediaGallery');
+
+                for (let i = 0; i < files.length; i++) {
+                    let file = files[i];
+                    let reader = new FileReader();
+
+                    reader.onload = function(event) {
+                        let mediaElement;
+                        if (file.type.startsWith('image/')) {
+                            mediaElement = document.createElement('img');
+                            mediaElement.src = event.target.result;
+                        } else if (file.type.startsWith('video/')) {
+                        mediaElement = document.createElement('video');
+                        mediaElement.src = event.target.result;
+                        mediaElement.controls = true;
+                        }
+                        gallery.appendChild(mediaElement);
+                };
+
+                reader.readAsDataURL(file);
+            }
+        });
+
+        // Chatbox functionality
+        document.getElementById('sendMessage').addEventListener('click', function() {
+            let chatInput = document.getElementById('chatInput');
+            let chatMessages = document.getElementById('chatMessages');
+
+            if (chatInput.value.trim() !== "") {
+                let message = document.createElement('p');
+                message.textContent = chatInput.value;
+                chatMessages.appendChild(message);
+                chatInput.value = '';
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }
+        });
+
+        // Voice recording functionality
+        let mediaRecorder;
+        let audioChunks = [];
+
+        document.getElementById('recordButton').addEventListener('click', function() {
+            if (mediaRecorder && mediaRecorder.state === 'recording') {
+                mediaRecorder.stop();
+                document.getElementById('recordButton').textContent = 'Record';
+            } else {
+                navigator.mediaDevices.getUserMedia({ audio: true })
+                    .then(stream => {
+                        mediaRecorder = new MediaRecorder(stream);
+                        mediaRecorder.ondataavailable = event => audioChunks.push(event.data);
+                        mediaRecorder.onstop = () => {
+                            let audioBlob = new Blob(audioChunks, { type: 'audio/wav' });
+                            let audioURL = URL.createObjectURL(audioBlob);
+                            let audio = document.createElement('audio');
+                            audio.controls = true;
+                            audio.src = audioURL;
+                            document.getElementById('chatMessages').appendChild(audio);
+                            audioChunks = [];
+                        };
+                        mediaRecorder.start();
+                        document.getElementById('recordButton').textContent = 'Stop';
+                    });
+            }
+        });
+    });
+</script>
+</body>
+</html>

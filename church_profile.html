@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Church Profile - MICC</title>
+    <link rel="stylesheet" href="profile.css">
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<style>
+    /* profile.css (For Profile Page) */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+}
+
+.profile-container {
+    width: 700px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+.profile-img {
+    display: block;
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+textarea {
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+}
+
+#eventsGallery {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.event-img {
+    width: 100px;
+    margin: 10px;
+    border-radius: 5px;
+}
+
+#chatbox {
+    margin-top: 20px;
+    background-color: #f1f1f1;
+padding: 10px;
+border-radius: 10px;
+}
+
+#chatMessages {
+max-height: 200px;
+overflow-y: auto;
+margin-bottom: 10px;
+}
+
+textarea#chatInput {
+width: calc(100% - 80px);
+float: left;
+}
+
+button#sendMessage {
+width: 70px;
+padding: 10px;
+background-color: #007BFF;
+color: white;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+}
+/* Add styles for the profile image upload section */
+
+.profile-image-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.profile-img {
+    display: block;
+    width: 100%;
+    max-width: 200px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+#uploadProfileImage {
+    display: block;
+    margin: 0 auto;
+}
+.header1 {
+            background-color: #0000008d;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            border-bottom: 1px solid #ddd;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            color: whitesmoke;
+        }
+        
+
+        .logo img {
+            /* width: 120px; */
+            object-fit: cover;
+            width: 70px;
+        }
+        .menu-icon {
+                font-size: 24px;
+                cursor: pointer;
+            }
+            .tech {
+                background-color: rgba(0, 0, 0, 0.9); /* Slightly more opaque to avoid the black screen */
+                color: white; /* Text color for contrast */
+                transition: transform 0.3s ease-in-out; /* Smooth transition */
+            }
+            .offcanvas {
+                visibility: hidden;
+                transform: translateX(100%);
+                    z-index: 1050; /* Ensures the offcanvas is on top of everything else */
+                    background-color: rgba(0, 0, 0, 0.9); /* Slightly transparent black */
+                
+            }
+            .offcanvas.show {
+                visibility: visible;
+                /* transform: translateX(0); */
+                transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+                
+            }
+            .offcanvas-end {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+
+            .offcanvas.show.offcanvas-end {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            /* padding: 0 20px;
+             */
+             padding: 15px 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            height: 20vh;
+            color: #fff;
+        }
+
+        .logo {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #fff;
+        }
+        .blockie {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.dropdown-content {
+    /* display: none; */
+    /* position: absolute; */
+    top: 50px;
+    right: 40px;
+    /* background-color: rgba(0, 0, 0, 0.455) !important; */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    color: blue;
+    /* z-index: 1000; */
+}
+
+.dropdown-content a {
+    color: rgb(251, 249, 249) !important;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: rgba(0, 0, 255, 0.623);
+}
+
+</style>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Church Profile - MICC</title>
+    <link rel="stylesheet" href="profile.css">
+</head>
+<body>
+    <header class="header1">
+        
+        <div class="logo">
+            <a href="MICindex.html">
+                <img src="./images/WhatsApp Image 2024-08-08 at 01.28.04_0b0785cb.jpg" alt="logo" style="max-height: 50px;">
+            </a> 
+        </div>
+        <div class="menu-icon">
+            <h4>M.I.C.C</h4>
+        </div>
+        <div class="join">
+            <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                <i class="fa fa-align-justify"></i> 
+                </button>
+    
+                
+                <!-- Offcanvas Menu -->
+                <div class="offcanvas offcanvas-end tech" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+                    <div class="offcanvas-header blockie">
+                        <h5 id="offcanvasRightLabel"></h5>
+                        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <div id="dropdown-menu" class="dropdown-content">
+                            <a href="MICindex.html"> Home Page</a>
+                            
+                            <a href="MICregistration.html">Instrumentalist Registration</a>
+                            <a href="church-registration.html">Church Registration</a>
+                            <a href="#">Profiles Directory</a>
+                            <a href="#dashboard">Dashboard</a>
+                            <a href="#video-gallery">Video Gallery</a>
+                            <a href="MICcontact.html">Contact/Booking</a>
+                            <a href="#thereview">Testimonials/thereviews</a>
+                        </div>
+                    </div>
+                </div>
+    
+            </div>
+        </div>
+    </header>
+    <div class="profile-container">
+        <h1 id="churchName">Church Name</h1>
+        <div class="profile-image-container">
+            <img id="churchImage" alt="Church Profile" class="profile-img">
+            <input type="file" id="uploadProfileImage" accept="image/*">
+        </div>
+        <p id="churchAddress">Address: </p>
+        <p id="instrumentalistNeeded">Instrumentalist Needed: </p>
+
+        <h2>About Our Church</h2>
+        <textarea id="churchDescription" placeholder="Describe your church..."></textarea>
+
+        <h2>Post Events & Images</h2>
+        <input type="file" id="churchEvents" multiple>
+
+        <h2>Posted Events</h2>
+        <div id="eventsGallery"></div>
+
+        <h2>Chat with Us</h2>
+        <div id="chatbox">
+            <textarea id="chatInput" placeholder="Type your message here..."></textarea>
+            <button id="sendMessage">Send</button>
+            <div id="chatMessages"></div>
+        </div>
+    </div>
+
+    <script src="profile.js"></script>
+    <script src="./bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+    <script>
+// Load church profile data
+document.getElementById('churchName').textContent = localStorage.getItem('churchName');
+document.getElementById('instrumentalistNeeded').textContent = "Instrumentalist Needed: " + localStorage.getItem('instrumentalistType');
+document.getElementById('churchAddress').textContent = "Address: " + localStorage.getItem('address');
+
+// Handle profile image upload
+const uploadProfileImageInput = document.getElementById('uploadProfileImage');
+const churchImage = document.getElementById('churchImage');
+
+// Load previously saved image if available
+const savedProfileImage = localStorage.getItem('churchProfileImage');
+if (savedProfileImage) {
+    churchImage.src = savedProfileImage;
+}
+
+uploadProfileImageInput.addEventListener('change', function(event) {
+    const file = event.target.files[0];
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            churchImage.src = e.target.result;
+            // Save the uploaded image to localStorage
+            localStorage.setItem('churchProfileImage', e.target.result);
+        }
+        reader.readAsDataURL(file);
+    }
+});
+
+// Event posting functionality
+document.getElementById('churchEvents').addEventListener('change', function(event) {
+    const files = event.target.files;
+    const gallery = document.getElementById('eventsGallery');
+    gallery.innerHTML = '';
+
+    for (let i = 0; i < files.length; i++) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            const img = document.createElement('img');
+            img.src = e.target.result;
+            img.className = 'event-img';
+            gallery.appendChild(img);
+        }
+        reader.readAsDataURL(files[i]);
+    }
+});
+
+// Chatbox functionality
+const chatMessages = document.getElementById('chatMessages');
+document.getElementById('sendMessage').addEventListener('click', function() {
+    const message = document.getElementById('chatInput').value;
+    if (message) {
+        const messageElement = document.createElement('p');
+        messageElement.textContent = "You: " + message;
+        chatMessages.appendChild(messageElement);
+        document.getElementById('chatInput').value = '';
+    }
+});
+
+
+    </script>
+
+    <script src="profile.js"></script>
+</body>
+</html>

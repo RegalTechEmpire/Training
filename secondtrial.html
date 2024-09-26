@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Instrumentalist Carousel</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* height: 00vh; */
+        }
+
+        .carousel-container {
+            text-align: center;
+            width: 100%;
+            max-width: 1000px;
+        }
+
+        h2 {
+            color: #0066ff;
+        }
+
+        .carousel {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            background-color: #0066ff;
+            padding: 20px 0;
+            border-radius: 10px;
+            /* height: 200vh; */
+        }
+
+        .carousel-inner {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .carousel-item {
+            min-width: 250px;
+            margin: 0 10px;
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            /* height: auto; */
+        }
+
+        .carousel-item img {
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+        }
+
+        h3 {
+            margin: 10px 0 5px;
+            color: #333;
+        }
+
+        p {
+            color: #777;
+        }
+
+        button {
+            margin-top: 10px;
+            padding: 10px 15px;
+            background-color: #3399ff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #1a73e8;
+        }
+
+        .prev-btn, .next-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: #0066ff;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            padding: 10px;
+            border-radius: 50%;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            z-index: 10;
+        }
+
+        .prev-btn {
+            left: 10px;
+        }
+
+        .next-btn {
+            right: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .carousel-item {
+                min-width: 90%;
+                margin: 0 auto;
+                padding: 20px 10px;
+                
+            }
+
+            .prev-btn, .next-btn {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="carousel-container">
+        <h2>Our Available Instrumentalist</h2>
+        <div class="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item">
+                    <img src="https://via.placeholder.com/100" alt="John Chike">
+                    <h3>John Chike</h3>
+                    <p>Guitarist</p>
+                    <button>Message me</button>
+                </div>
+                <div class="carousel-item">
+                    <img src="https://via.placeholder.com/100" alt="Jane Smith">
+                    <h3>Jane Smith</h3>
+                    <p>Drummer</p>
+                    <button>Message me</button>
+                </div>
+                <div class="carousel-item">
+                    <img src="https://via.placeholder.com/100" alt="Mike Johnson">
+                    <h3>Mike Johnson</h3>
+                    <p>Pianist</p>
+                    <button>Message me</button>
+                </div>
+                <div class="carousel-item">
+                    <img src="https://via.placeholder.com/100" alt="Emily Davis">
+                    <h3>Emily Davis</h3>
+                    <p>Violinist</p>
+                    <button>Message me</button>
+                </div>
+            </div>
+            <button class="prev-btn" onclick="moveCarousel(-1)">&#10094;</button>
+            <button class="next-btn" onclick="moveCarousel(1)">&#10095;</button>
+        </div>
+    </div>
+
+    <script>
+        let currentIndex = 0;
+
+        function moveCarousel(direction) {
+            const items = document.querySelectorAll('.carousel-item');
+            const totalItems = items.length;
+            const itemWidth = items[0].clientWidth + 20; // Add margin space
+            currentIndex = (currentIndex + direction + totalItems) % totalItems;
+            const offset = -currentIndex * itemWidth;
+            document.querySelector('.carousel-inner').style.transform = `translateX(${offset}px)`;
+        }
+
+        // Adjust the carousel when resizing the window
+        window.addEventListener('resize', () => {
+            const itemWidth = document.querySelector('.carousel-item').clientWidth + 20;
+            const offset = -currentIndex * itemWidth;
+            document.querySelector('.carousel-inner').style.transform = `translateX(${offset}px)`;
+        });
+    </script>
+</body>
+</html>

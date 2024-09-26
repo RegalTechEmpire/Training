@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Church Registration - MICC</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+<style>
+    /* styles.css (For Registration Page) */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+input[type="text"], input[type="email"], input[type="file"], select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.submit-btn:hover {
+    background-color: #0056b3;
+}
+.header1 {
+            background-color: #0000008d;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            border-bottom: 1px solid #ddd;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            color: whitesmoke;
+        }
+        
+
+        .logo img {
+            /* width: 120px; */
+            object-fit: cover;
+            width: 70px;
+        }
+        .menu-icon {
+                font-size: 24px;
+                cursor: pointer;
+            }
+            .tech {
+                background-color: rgba(0, 0, 0, 0.9); /* Slightly more opaque to avoid the black screen */
+                color: white; /* Text color for contrast */
+                transition: transform 0.3s ease-in-out; /* Smooth transition */
+            }
+            .offcanvas {
+                visibility: hidden;
+                transform: translateX(100%);
+                    z-index: 1050; /* Ensures the offcanvas is on top of everything else */
+                    background-color: rgba(0, 0, 0, 0.9); /* Slightly transparent black */
+                
+            }
+            .offcanvas.show {
+                visibility: visible;
+                /* transform: translateX(0); */
+                transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+                
+            }
+            .offcanvas-end {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+
+            .offcanvas.show.offcanvas-end {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            /* padding: 0 20px;
+             */
+             padding: 15px 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            height: 20vh;
+            color: #fff;
+        }
+
+        .logo {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #fff;
+        }
+        .blockie {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.dropdown-content {
+    /* display: none; */
+    /* position: absolute; */
+    top: 50px;
+    right: 40px;
+    /* background-color: rgba(0, 0, 0, 0.455) !important; */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    color: blue;
+    /* z-index: 1000; */
+}
+
+.dropdown-content a {
+    color: rgb(251, 249, 249) !important;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: rgba(0, 0, 255, 0.623);
+}
+
+</style>
+<body>
+    <header class="header1">
+        
+        <div class="logo">
+            <a href="MICindex.html">
+                <img src="./images/WhatsApp Image 2024-08-08 at 01.28.04_0b0785cb.jpg" alt="logo" style="max-height: 50px;">
+            </a> 
+        </div>
+        <div class="menu-icon">
+            <h4>M.I.C.C</h4>
+        </div>
+        <div class="join">
+            <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                <i class="fa fa-align-justify"></i> 
+                </button>
+    
+                
+                <!-- Offcanvas Menu -->
+                <div class="offcanvas offcanvas-end tech" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+                    <div class="offcanvas-header blockie">
+                        <h5 id="offcanvasRightLabel"></h5>
+                        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <div id="dropdown-menu" class="dropdown-content">
+                            <a href="MICindex.html"> Home Page</a>
+                            
+                            <a href="MICregistration.html">Instrumentalist Registration</a>
+                            <a href="church-registration.html">Church Registration</a>
+                            <a href="#">Profiles Directory</a>
+                            <a href="#dashboard">Dashboard</a>
+                            <a href="#video-gallery">Video Gallery</a>
+                            <a href="MICcontact.html">Contact/Booking</a>
+                            <a href="#thereview">Testimonials/thereviews</a>
+                        </div>
+                    </div>
+                </div>
+    
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <h1>Register Your Church</h1>
+        <form id="churchRegistrationForm">
+            <div class="form-group">
+                <label for="churchName">Church Name:</label>
+                <input type="text" id="churchName" name="churchName" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="instrumentalistType">Instrumentalist Needed:</label>
+                <select id="instrumentalistType" name="instrumentalistType" required>
+                    <option value="">Select Type</option>
+                    <option value="Pianist">Pianist</option>
+                    <option value="Guitarist">Guitarist</option>
+                    <option value="Drummer">Drummer</option>
+                    <option value="Violinist">Violinist</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="profileImage">Profile Image:</label>
+                <input type="file" id="profileImage" name="profileImage" accept="image/*" required>
+            </div>
+            <div class="form-group">
+                <label for="address">Church Address:</label>
+                <input type="text" id="address" name="address" required>
+            </div>
+            <button type="submit" class="submit-btn">Register</button>
+        </form>
+    </div>
+    <script>
+        document.getElementById('churchRegistrationForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    // Gather form data
+    const churchName = document.getElementById('churchName').value;
+    const instrumentalistType = document.getElementById('instrumentalistType').value;
+    const address = document.getElementById('address').value;
+
+    // Store data in localStorage
+    localStorage.setItem('churchName', churchName);
+    localStorage.setItem('instrumentalistType', instrumentalistType);
+    localStorage.setItem('address', address);
+
+    // Redirect to profile page
+    window.location.href = 'church_profile.html';
+});
+
+    </script>
+    <script src="script.js"></script>
+    <script src="./bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
